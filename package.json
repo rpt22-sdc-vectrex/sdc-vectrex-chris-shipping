@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Shipping module for Etsy FEC project",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FEC-Linka/shipping.git"
@@ -17,6 +15,10 @@
   },
   "homepage": "https://github.com/FEC-Linka/shipping#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node": "^14.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
