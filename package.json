@@ -16,6 +16,7 @@
   "homepage": "https://github.com/FEC-Linka/shipping#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.9.28",
     "node": "^14.7.0"
   },
   "devDependencies": {
