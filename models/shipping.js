@@ -10,3 +10,5 @@ const schema = new Schema({
     countries_shipped_to: {type: String, required: true},
     return_policy: {type: String, required: true}
 });
+
+module.exports = mongoose.model('Shipping', schema);
