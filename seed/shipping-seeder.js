@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Product = require('../models/shipping');
 
 const products = [
@@ -1006,3 +1007,21 @@ const products = [
     "return_policy": "vestibulum rutrum rutrum neque aenean auctor gravida sem"
   })
 ];
+
+const closeConnection = function() {
+  mongoose.disconnect();
+  console.log('disconnected from DB');
+};
+
+mongoose.connect('mongodb://localhost:27017/fecShipping', { useNewUrlParser: true })
+  .then(res => console.log('Connected to DB'))
+  .catch(err => console.log(err))
+let exitCounter = 0
+for (let i = 0; i < products.length; i++) {
+  products[i].save((err, result)=>{
+    exitCounter++;
+    if (exitCounter === products.length) {
+      closeConnection();
+    }
+  })
+}
