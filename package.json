@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Shipping module for Etsy FEC project",
   "main": "app.js",
-  "scripts": {},
+  "scripts": {
+    "seed": "node ./seed/shipping-seeder.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FEC-Linka/shipping.git"
