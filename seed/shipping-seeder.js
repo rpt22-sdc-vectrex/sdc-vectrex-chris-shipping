@@ -1013,7 +1013,7 @@ const products = [
 //Since this seeding script only needs to have a connection open to the db while the script runs create a closeConnection function. The closeConnection function will be called as part of the .save callback to close the connection when all of the records have been sent to the db.
 const closeConnection = function () {
   mongoose.disconnect();
-  console.log('disconnected from DB');
+  console.log('Disconnected from DB');
 };
 
 //main script
@@ -1022,11 +1022,13 @@ mongoose.connect('mongodb://localhost:27017/fecShipping', { useNewUrlParser: tru
   .then(res => console.log('Connected to DB'))
   .catch(err => console.log(err))
 // create a counter so we know when the last record has been sent to the db
-let exitCounter = 0
+let exitCounter = 0;
 //loop through the 100 products and create a record for each one with it's related shipping data
 for (let i = 0; i < products.length; i++) {
   // add each record to the database
   products[i].save((err, result) => {
+    //show that records are being added
+    console.log(`Adding records..`);
     //increment the exitCounter so we know when to run closeConnection - must increment before checking if we're done yet or will be off by 1
     exitCounter++;
     //check to see if we have finished sending documents to the db, if so close the connection
