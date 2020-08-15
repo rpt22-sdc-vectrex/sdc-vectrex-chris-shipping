@@ -1,0 +1,19 @@
+db.itemShippingInfo.insert({
+  "product_id": 1,
+  "estimated_delivery": "2020-03-27T00:42:30Z",
+  "ready_to_ship": "1-3 business days",
+  "ship_from_city": "Seattle",
+  "ship_from_state": "WA",
+  "countries_shipped_to": "United States",
+  "return_policy": "No returns or exchanges. But please contact me if you have any problems with your order."
+})
+
+db.itemShippingInfo.insert({
+  "product_id": 2,
+  "estimated_delivery": "2019-11-12T01:17:42Z",
+  "ready_to_ship": "3-5 business days",
+  "ship_from_city": "Henderson",
+  "ship_from_state": "NV",
+  "countries_shipped_to": "United States",
+  "return_policy": "Returns and exchanges accepted. Exceptions may apply."
+})
