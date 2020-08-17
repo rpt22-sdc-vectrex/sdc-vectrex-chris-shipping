@@ -1,16 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+//const bodyParser = require('body-parser');
 const port = process.env.PORT || 7100;
-const db = mongoose.connection;
 
 const app = express();
 
-mongoose.connect(
-  'mongodb://localhost:27017/fecShipping',
-  {useNewUrlParser: true, useUnifiedTopology: true},
-  () => console.log(`Connected to fecShipping`)
-);
+mongoose
+  .connect(
+    'mongodb://localhost:27017/fecShipping',
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
+  .then(() => console.log(`Connected to fecShipping DB`))
+  .catch(err => console.log(err));
 
 app.use('/static', express(path.join(__dirname, 'public')));
 
