@@ -11,7 +11,7 @@ router.get('/all', (req, res) => {
 
 router.get('/:productId', (req, res) => {
   console.log(`Returning item ${req.params.productId}`);
-  Shipping.find({product_id: req.params.productId})
+  Shipping.findOne({product_id: req.params.productId})
     .then(item => res.json(item))
 });
 
