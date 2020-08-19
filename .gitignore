@@ -1,7 +1,7 @@
 # Ignore Mac System Files
 .DS_store
 
-#Ignore node_modules
+#Ignore folders
 node_modules
 scrap
 

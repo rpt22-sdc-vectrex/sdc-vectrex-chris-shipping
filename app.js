@@ -1,13 +1,32 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
+const items = require('./routes/api/items');
+const routes = require('./routes/general/routes');
 
+//const bodyParser = require('body-parser');
 const port = process.env.PORT || 7100;
 
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('This is a test response message');
-})
+//connect to mongo
+mongoose
+  .connect(
+    'mongodb://localhost:27017/fecShipping',
+    { useNewUrlParser: true, useUnifiedTopology: true }  //per deprecation warnings when run without these
+  )
+  .then(() => console.log(`Connected to fecShipping DB`))
+  .catch(err => console.log(err));
+
+//serve static files
+app.use('/static', express(path.join(__dirname, 'public')));
+
+//use routes
+app.use('/shipping-api/', items);
+app.use('/', routes);
+
+
+
 
 app.listen(port, () => {
   console.log(`Shipping server is up and running on port ${port}`);
