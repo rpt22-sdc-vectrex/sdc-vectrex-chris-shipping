@@ -4,7 +4,8 @@
   "description": "Shipping module for Etsy FEC project",
   "main": "app.js",
   "scripts": {
-    "seed": "node ./seed/shipping-seeder.js"
+    "seed": "node ./seed/shipping-seeder.js",
+    "start": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
