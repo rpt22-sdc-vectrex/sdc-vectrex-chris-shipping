@@ -7,8 +7,7 @@
     "seed": "node ./seed/shipping-seeder.js",
     "start": "webpack --config webpack.config.js",
     "test": "jest",
-    "seed": "node ./seed/shipping-seeder.js",
-    "start": "node app.js",
+    "dev-node": "node app.js",
     "dev": "nodemon app.js"
   },
   "repository": {
