@@ -4,7 +4,10 @@
   "description": "Shipping module for Etsy FEC project",
   "main": "app.js",
   "scripts": {
-    "seed": "node ./seed/shipping-seeder.js"
+    "test": "jest",
+    "seed": "node ./seed/shipping-seeder.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -17,11 +20,14 @@
   },
   "homepage": "https://github.com/FEC-Linka/shipping#readme",
   "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.28",
     "node": "^14.7.0"
   },
   "devDependencies": {
+    "jest": "^26.4.0",
     "nodemon": "^2.0.4"
   }
 }

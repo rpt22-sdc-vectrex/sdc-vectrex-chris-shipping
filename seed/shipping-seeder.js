@@ -1,6 +1,6 @@
 //requirements
 const mongoose = require('mongoose');
-const Product = require('../models/shipping'); //schema for this collection
+const Product = require('../models/Shipping'); //schema for this collection
 
 //List of items to add to my dev and test databases - product_id 1-100 match product ids from other team member's dbs. The fake data may not match.
 const products = [
@@ -1037,3 +1037,5 @@ for (let i = 0; i < products.length; i++) {
     }
   })
 }
+
+module.exports = seeder;
