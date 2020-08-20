@@ -2,11 +2,11 @@
   "name": "shipping",
   "version": "1.0.0",
   "description": "Shipping module for Etsy FEC project",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "seed": "node ./seed/shipping-seeder.js",
     "dev-client": "webpack-dev-server --open --config webpack.config.js",
-    "dev-server": "nodemon app.js",
+    "dev-server": "nodemon server.js",
     "test": "jest"
   },
   "repository": {
