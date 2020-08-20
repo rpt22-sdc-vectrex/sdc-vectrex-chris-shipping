@@ -5,5 +5,16 @@ module.exports = {
   output: {
     filename: "ttreit-shipping.js",
     path: path.resolve(__dirname, "dist")
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      }
+    ]
   }
 };
