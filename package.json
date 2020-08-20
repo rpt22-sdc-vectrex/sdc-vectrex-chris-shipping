@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "seed": "node ./seed/shipping-seeder.js",
-    "start": "webpack-dev-server --open --config webpack.config.js",
-    "test": "jest",
-    "dev-server": "nodemon app.js"
+    "dev-client": "webpack-dev-server --open --config webpack.config.js",
+    "dev-server": "nodemon app.js",
+    "test": "jest"
+
   },
   "repository": {
     "type": "git",
