@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const Product = require('../models/Shipping'); //schema for this collection
+const path = require ('path');
 
 //List of items to add to my dev and test databases - product_id 1-100 match product ids from other team member's dbs. The fake data may not match.
 const products = [
@@ -1019,7 +1020,7 @@ const closeConnection = function () {
 
 //main script
 //open a connection
-dotenv.config();
+dotenv.config({path: path.join(__dirname, '../.env')});
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true })
   .then(res => console.log('Connected to DB'))
   .catch(err => console.log(err))
@@ -1040,4 +1041,4 @@ for (let i = 0; i < products.length; i++) {
   })
 }
 
-module.exports = seeder;
+//module.exports = seeder; TODO fix this
