@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import CostToShip from './CostToShip';
-import DeliverTo from './DeliverTo';
-import EstimatedDelivery from './EstimatedDelivery';
-import From from './From';
-import Policies from './Policies';
-import ReadyToShip from './ReadyToShip';
+import CostToShip from './CostToShip.jsx';
+import DeliverTo from './DeliverTo.jsx';
+import EstimatedDelivery from './EstimatedDelivery.jsx';
+import From from './From.jsx';
+import Policies from './Policies.jsx';
+import ReadyToShip from './ReadyToShip.jsx';
 
 class App extends Component {
   constructor(props) {
