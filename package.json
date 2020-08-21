@@ -2,14 +2,12 @@
   "name": "shipping",
   "version": "1.0.0",
   "description": "Shipping module for Etsy FEC project",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "seed": "node ./seed/shipping-seeder.js",
-    "start": "webpack --config webpack.config.js"
-    "test": "jest",
-    "seed": "node ./seed/shipping-seeder.js",
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev-client": "webpack --config webpack.config.js --watch",
+    "dev-server": "nodemon server.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,15 +20,22 @@
   },
   "homepage": "https://github.com/FEC-Linka/shipping#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.28",
-    "node": "^14.7.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
     "jest": "^26.4.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }
