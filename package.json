@@ -7,7 +7,7 @@
     "seed": "node ./seed/shipping-seeder.js",
     "dev-client": "webpack --config webpack.config.js --watch",
     "dev-server": "nodemon server.js",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
