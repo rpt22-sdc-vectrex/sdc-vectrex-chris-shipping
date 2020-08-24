@@ -1,5 +1,11 @@
 {
   "name": "shipping",
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    }
+  },
   "version": "1.0.0",
   "description": "Shipping module for Etsy FEC project",
   "main": "server.js",
@@ -7,7 +13,7 @@
     "seed": "node ./seed/shipping-seeder.js",
     "dev-client": "webpack --config webpack.config.js --watch",
     "dev-server": "nodemon server.js",
-    "test": "jest --verbose"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -32,6 +38,7 @@
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
@@ -44,6 +51,7 @@
     "jest": "^26.4.0",
     "jest-enzyme": "^7.1.2",
     "nodemon": "^2.0.4",
+    "supertest": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
