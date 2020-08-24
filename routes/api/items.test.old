@@ -4,12 +4,12 @@ const items = require('./items')
 
 let result;
 
-test('API jest test', () => {
+test('another jest test', () => {
   result = true;
   expect(result).toBe(true);
 });
 
-test('NOTSETUP GET /1 returns item with ID of 1', () => {
-  result = true;
-  expect(result).toBe(true);
-});
+// test('NOTSETUP GET /1 returns item with ID of 1', () => {
+//   result = true;
+//   expect(result).toBe(true);
+// });
