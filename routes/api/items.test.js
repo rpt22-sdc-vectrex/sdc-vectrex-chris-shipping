@@ -9,7 +9,7 @@ test('API jest test', () => {
   expect(result).toBe(true);
 });
 
-test('GET /1 returns item with ID of 1', () => {
+test('NOTSETUP GET /1 returns item with ID of 1', () => {
   result = true;
   expect(result).toBe(true);
 });
