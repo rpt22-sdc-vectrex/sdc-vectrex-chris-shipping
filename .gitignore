@@ -4,7 +4,7 @@
 #Ignore folders
 node_modules
 scrap
-public/dist
+client/dist
 client/dist
 
 #Ignore environment variables (API keys)
