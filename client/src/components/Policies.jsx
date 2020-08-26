@@ -1,11 +1,11 @@
 import React from 'react';
 
 function Policies(props) {
-  return(
+  return (
     <div>
-      <h1>Policies</h1>
+      <h1 data-test="policiesComponent">Policies</h1>
     </div>
-  )
+  );
 }
 
 export default Policies;
