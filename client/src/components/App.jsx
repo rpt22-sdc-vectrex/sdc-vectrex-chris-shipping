@@ -11,9 +11,10 @@ class App extends Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
-      <div classname='shippingBox'>
+      <div className="shippingBox" data-test="appComponent">
         <CostToShip />
         <DeliverTo />
         <EstimatedDelivery />
@@ -24,6 +25,5 @@ class App extends Component {
     );
   }
 }
-
 
 export default App;
