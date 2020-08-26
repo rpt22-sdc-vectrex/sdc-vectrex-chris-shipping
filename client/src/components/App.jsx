@@ -8,12 +8,10 @@ import ReadyToShip from './ReadyToShip.jsx';
 import id1 from '../../../mongo-mockdata/id1.json';
 import id2 from '../../../mongo-mockdata/id2.json';
 
-
-
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { productId: id2 };
   }
 
   render() {
@@ -22,7 +20,7 @@ class App extends Component {
         <CostToShip />
         <DeliverTo />
         <EstimatedDelivery />
-        <From city={id2.ship_from_city} state={id2.ship_from_state} />
+        <From city={this.state.productId.ship_from_city} state={this.state.productId.ship_from_state} />
         <Policies />
         <ReadyToShip />
       </div>
