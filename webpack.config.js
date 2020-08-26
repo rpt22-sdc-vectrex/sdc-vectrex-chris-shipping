@@ -1,10 +1,11 @@
 const path = require('path');
+
 module.exports = {
   mode: 'development',
-  entry: path.join(__dirname, 'public/src/index.jsx'),
+  entry: path.join(__dirname, 'client/src/index.jsx'),
   output: {
     filename: 'ttreit-shipping.js',
-    path: path.join(__dirname, '/public/dist')
+    path: path.join(__dirname, '/client/dist'),
   },
   module: {
     rules: [
@@ -14,10 +15,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
-      }
-    ]
-  }
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+    ],
+  },
 };
