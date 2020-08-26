@@ -5,7 +5,6 @@
 node_modules
 scrap
 client/dist
-client/dist
 
 #Ignore environment variables (API keys)
 .env
