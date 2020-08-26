@@ -14,13 +14,29 @@ class App extends Component {
     this.state = { productId: id2 };
   }
 
+  componentDidMount() {
+    this.changeProduct();
+  }
+
+  changeProduct() {
+    const test = 1;
+    if (test === 1) {
+      this.setState({productId: id1});
+    } else {
+      this.setState({productId: id2});
+    }
+  }
+
   render() {
     return (
       <div className="shippingBox" data-test="appComponent">
         <CostToShip />
         <DeliverTo />
         <EstimatedDelivery />
-        <From city={this.state.productId.ship_from_city} state={this.state.productId.ship_from_state} />
+        <From
+        city={this.state.productId.ship_from_city}
+        state={this.state.productId.ship_from_state}
+        />
         <Policies />
         <ReadyToShip />
       </div>
