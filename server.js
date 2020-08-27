@@ -21,7 +21,7 @@ mongoose
   .catch((err) => console.log(err));
 
 //  serve static files
-app.use('/static', express(path.join(__dirname, 'client')));
+app.use(express.static('client'));
 
 //  use routes
 app.use('/shipping-api/', items);
