@@ -5,27 +5,28 @@ import EstimatedDelivery from './EstimatedDelivery.jsx';
 import From from './From.jsx';
 import Policies from './Policies.jsx';
 import ReadyToShip from './ReadyToShip.jsx';
-import id1 from '../../../mongo-mockdata/id1.json';
-import id2 from '../../../mongo-mockdata/id2.json';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { productId: id2 };
+    this.state = { productId: 1 };
   }
 
   componentDidMount() {
-    this.changeProduct();
+    this.setProductId();
   }
 
-  changeProduct() {
-    const test = 2;
-    if (test === 1) {
-      this.setState({ productId: id1 });
-    } else {
-      this.setState({ productId: id2 });
-    }
+  setProductId() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const id = urlParams.get('id');
+    this.setState({ productId: id });
   }
+
+  getProduct() {
+
+  }
+
 
   render() {
     return (
