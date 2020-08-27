@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const dotenv = require('dotenv');
 const items = require('./routes/api/items');
 const routes = require('./routes/general/routes');
 
@@ -10,12 +11,13 @@ const port = process.env.PORT || 7100;
 const app = express();
 
 //  connect to mongo
+dotenv.config({ path: path.join(__dirname, './.env') });
 mongoose
   .connect(
-    'mongodb://localhost:27017/fecShipping',
+    process.env.DB_CONNECTION,
     { useNewUrlParser: true, useUnifiedTopology: true }, // per deprecation warnings
   )
-  .then(() => console.log('Connected to fecShipping DB'))
+  .then(() => console.log('Connected to fecShipping DB on Atlas'))
   .catch((err) => console.log(err));
 
 //  serve static files
