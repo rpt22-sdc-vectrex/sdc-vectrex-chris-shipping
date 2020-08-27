@@ -19,11 +19,11 @@ class App extends Component {
   }
 
   changeProduct() {
-    const test = 1;
+    const test = 2;
     if (test === 1) {
-      this.setState({productId: id1});
+      this.setState({ productId: id1 });
     } else {
-      this.setState({productId: id2});
+      this.setState({ productId: id2 });
     }
   }
 
@@ -34,8 +34,8 @@ class App extends Component {
         <DeliverTo />
         <EstimatedDelivery />
         <From
-        city={this.state.productId.ship_from_city}
-        state={this.state.productId.ship_from_state}
+          city={this.state.productId.ship_from_city}
+          state={this.state.productId.ship_from_state}
         />
         <Policies />
         <ReadyToShip />
