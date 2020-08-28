@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import regeneratorRuntime from "regenerator-runtime";
 import CostToShip from './CostToShip.jsx';
 import DeliverTo from './DeliverTo.jsx';
 import EstimatedDelivery from './EstimatedDelivery.jsx';
@@ -6,27 +7,42 @@ import From from './From.jsx';
 import Policies from './Policies.jsx';
 import ReadyToShip from './ReadyToShip.jsx';
 
+const axios = require('axios').default;
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { productId: 1 };
+    this.state = {
+      city: '',
+      state: '',
+    };
   }
 
   componentDidMount() {
-    this.setProductId();
+    this.getProduct();
   }
 
   setProductId() {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const id = urlParams.get('id');
-    this.setState({ productId: id });
+    this.queryString = window.location.search;
+    this.urlParams = new URLSearchParams(this.queryString);
+    this.id = this.urlParams.get('id');
+    this.id = parseInt(this.id, 10);
+    return this.id;
   }
 
-  getProduct() {
-
+  async getProduct() {
+    const id = this.setProductId();
+    try {
+      const response = await axios.get(`http://localhost:7100/shipping-api/${id}`);
+      const shipping = response.data;
+      this.setState({
+        city: shipping.ship_from_city,
+        state: shipping.ship_from_state,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
-
 
   render() {
     return (
@@ -35,8 +51,8 @@ class App extends Component {
         <DeliverTo />
         <EstimatedDelivery />
         <From
-          city={this.state.productId.ship_from_city}
-          state={this.state.productId.ship_from_state}
+          city={this.state.city}
+          state={this.state.state}
         />
         <Policies />
         <ReadyToShip />
