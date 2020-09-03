@@ -23,9 +23,9 @@ class App extends Component {
   }
 
   setProductId() {
-    this.queryString = window.location.search;
-    this.urlParams = new URLSearchParams(this.queryString);
-    this.id = this.urlParams.get('id');
+    let productId = window.location.pathname;
+    productId = productId.slice(1);
+    this.id = productId || 1;
     this.id = parseInt(this.id, 10);
     return this.id;
   }
