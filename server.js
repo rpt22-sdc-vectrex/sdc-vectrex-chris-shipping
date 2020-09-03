@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
 const dotenv = require('dotenv');
@@ -20,12 +21,16 @@ mongoose
   .then(() => console.log('Connected to fecShipping DB on Atlas'))
   .catch((err) => console.log(err));
 
+//  Begin Middleware
+app.use(cors());
+
 //  serve static files
 app.use(express.static('client'));
 
 //  use routes
 app.use('/shipping-api/', items);
 app.use('/', routes);
+
 
 app.listen(port, () => {
   console.log(`Shipping server is up and running on port ${port}`);
