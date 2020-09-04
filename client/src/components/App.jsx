@@ -23,10 +23,14 @@ class App extends Component {
   }
 
   setProductId() {
-    this.queryString = window.location.search;
-    this.urlParams = new URLSearchParams(this.queryString);
-    this.id = this.urlParams.get('id');
+    let productId = window.location.pathname;
+    console.log('window', window.location.pathname);
+    productId = productId.slice(1);
+    console.log('productID: ', productId);
+    this.id = productId || 1;
+    console.log('this.id', this.id);
     this.id = parseInt(this.id, 10);
+    console.log('typeOf', typeof this.id);
     return this.id;
   }
 
