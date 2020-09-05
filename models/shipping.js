@@ -12,3 +12,5 @@ const ShippingSchema = new Schema({
 });
 
 module.exports = mongoose.model('Shipping', ShippingSchema);
+
+//test comment
