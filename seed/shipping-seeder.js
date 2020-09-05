@@ -1,8 +1,8 @@
 //requirements
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const Product = require('../models/Shipping'); //schema for this collection
 const path = require ('path');
+const Product = require(path.join(__dirname, '../models/Shipping')); //schema for this collection
 
 //List of items to add to my dev and test databases - product_id 1-100 match product ids from other team member's dbs. The fake data may not match.
 const products = [
