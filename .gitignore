@@ -8,4 +8,4 @@ client/dist
 
 #Ignore environment variables (API keys)
 .env
-
+.pem
