@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const express = require('express');
-const Shipping = require('../../models/Shipping');
+const Shipping = require('../../models/shipping');
 
 const router = express.Router();
 
