@@ -8,4 +8,6 @@ client/dist
 
 #Ignore environment variables (API keys)
 .env
-.pem
+
+#Ignore ssh keys
+FEC.pem
