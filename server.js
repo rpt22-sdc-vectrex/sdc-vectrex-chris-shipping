@@ -31,7 +31,6 @@ app.use(express.static('client'));
 app.use('/shipping-api/', items);
 app.use('/', routes);
 
-
 app.listen(port, () => {
   console.log(`Shipping server is up and running on port ${port}`);
 });
