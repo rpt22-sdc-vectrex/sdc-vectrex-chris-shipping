@@ -7,7 +7,7 @@ const items = require('./routes/api/items');
 const routes = require('./routes/general/routes');
 
 //  const bodyParser = require('body-parser');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 7100;
 
 const app = express();
 
