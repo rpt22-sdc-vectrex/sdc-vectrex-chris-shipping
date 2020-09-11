@@ -6,6 +6,7 @@ import EstimatedDelivery from './EstimatedDelivery.jsx';
 import From from './From.jsx';
 import Policies from './Policies.jsx';
 import ReadyToShip from './ReadyToShip.jsx';
+const path = require('path');
 
 const axios = require('axios').default;
 
@@ -24,20 +25,23 @@ class App extends Component {
 
   setProductId() {
     let productId = window.location.pathname;
-    console.log('window', window.location.pathname);
     productId = productId.slice(1);
-    console.log('productID: ', productId);
     this.id = productId || 1;
-    console.log('this.id', this.id);
     this.id = parseInt(this.id, 10);
-    console.log('typeOf', typeof this.id);
     return this.id;
+  }
+
+  setProductLocation() {
+    const productLocation = window.location.origin;
+    this.location = productLocation;
+    return this.location;
   }
 
   async getProduct() {
     const id = this.setProductId();
+    const location = this.setProductLocation();
     try {
-      const response = await axios.get(`http://localhost:7100/shipping-api/${id}`);
+      const response = await axios.get(`${location}/shipping-api/${id}`);
       const shipping = response.data;
       this.setState({
         city: shipping.ship_from_city,
