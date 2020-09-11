@@ -14,6 +14,7 @@
     "dev-client": "webpack --config webpack.config.js --watch",
     "dev-server": "nodemon server.js",
     "start": "pm2 start server.js",
+    "build": "webpack --config webpack.config.js",
     "test": "jest"
   },
   "repository": {
