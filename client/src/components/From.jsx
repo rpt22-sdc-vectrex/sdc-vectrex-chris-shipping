@@ -3,7 +3,7 @@ import React from 'react';
 function From(props) {
   return (
     <div>
-      <h1 data-test="fromComponent">From</h1>
+      <h1 data-test="fromComponent">Ships from</h1>
       <h3>
         {props.city}
         ,
