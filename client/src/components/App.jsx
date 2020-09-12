@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import regeneratorRuntime from "regenerator-runtime";
+import moment from 'moment';
 import CostToShip from './CostToShip.jsx';
 import DeliverTo from './DeliverTo.jsx';
 import EstimatedDelivery from './EstimatedDelivery.jsx';
 import From from './From.jsx';
 import Policies from './Policies.jsx';
 import ReadyToShip from './ReadyToShip.jsx';
-const path = require('path');
 
 const axios = require('axios').default;
 
@@ -64,11 +64,13 @@ class App extends Component {
       const costResponse = await axios.get('https://valeriia-ten-inventory.s3.us-east-2.amazonaws.com/100inventory.json');
       const itemShippingCostData = this.getShippingCostData(costResponse.data, id);
       const costToShip = this.getShippingCost(itemShippingCostData);
+      let delivery = shipping.estimated_delivery;
+      delivery = moment(delivery).format('MMM Do YYYY');
 
       this.setState({
         city: shipping.ship_from_city,
         state: shipping.ship_from_state,
-        estimatedDelivery: shipping.estimated_delivery,
+        estimatedDelivery: delivery,
         shippingCost: costToShip,
         deliverTo: shipping.countries_shipped_to,
         policies: shipping.return_policy,
