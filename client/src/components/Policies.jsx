@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const PoliciesStyle = styled.div`
   font-size: 13px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-  color: #595959
+  color: #595959;
 `;
 
 const PoliciesDataStyle = styled.div`
@@ -20,10 +20,13 @@ const PoliciesDataStyle = styled.div`
 function Policies(props) {
   return (
     <div>
-      <PoliciesStyle data-test="policiesComponent">Policies</PoliciesStyle>
+      <PoliciesStyle data-test="policiesComponent">Returns and Exchanges</PoliciesStyle>
       <PoliciesDataStyle>
-        {props.policies}
+        {props.returns}
       </PoliciesDataStyle>
+      <PoliciesStyle>
+        {props.policies}
+      </PoliciesStyle>
     </div>
   );
 }
