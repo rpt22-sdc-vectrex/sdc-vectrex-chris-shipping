@@ -23,6 +23,7 @@ class App extends Component {
       state: '',
       estimatedDelivery: '',
       returns: '',
+      shippingCost: 'FreeTEST',
     };
   }
 
@@ -67,9 +68,9 @@ class App extends Component {
     try {
       const response = await axios.get(`${location}/shipping-api/${id}`);
       const shipping = response.data;
-      const costResponse = await axios.get('https://valeriia-ten-inventory.s3.us-east-2.amazonaws.com/100inventory.json');
-      const itemShippingCostData = this.getShippingCostData(costResponse.data, id);
-      const costToShip = this.getShippingCost(itemShippingCostData);
+      //const costResponse = await axios.get('https://valeriia-ten-inventory.s3.us-east-2.amazonaws.com/100inventory.json');
+      //const itemShippingCostData = this.getShippingCostData(costResponse.data, id);
+      //const costToShip = this.getShippingCost(itemShippingCostData);
       let delivery = shipping.estimated_delivery;
       delivery = moment(delivery).format('MMM Do YYYY');
 
@@ -77,7 +78,7 @@ class App extends Component {
         city: shipping.ship_from_city,
         state: shipping.ship_from_state,
         estimatedDelivery: delivery,
-        shippingCost: costToShip,
+        //shippingCost: costToShip,
         deliverTo: shipping.countries_shipped_to,
         policies: shipping.return_policy,
         returns: shipping.returns,
