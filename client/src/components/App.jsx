@@ -84,25 +84,31 @@ class App extends Component {
   render() {
     return (
       <div className="shippingBox" data-test="appComponent">
-        <CostToShip
-          shippingCost={this.state.shippingCost}
-        />
-        <DeliverTo
-          deliverTo={this.state.deliverTo}
-        />
         <EstimatedDelivery
           estimatedDelivery={this.state.estimatedDelivery}
         />
+
+        <ReadyToShip
+          readyToShip={this.state.readyToShip}
+        />
+
+        <CostToShip
+          shippingCost={this.state.shippingCost}
+        />
+
+        <Policies
+          policies={this.state.policies}
+        />
+
+        <DeliverTo
+          deliverTo={this.state.deliverTo}
+        />
+
         <From
           city={this.state.city}
           state={this.state.state}
         />
-        <Policies
-          policies={this.state.policies}
-        />
-        <ReadyToShip
-          readyToShip={this.state.readyToShip}
-        />
+
       </div>
     );
   }
