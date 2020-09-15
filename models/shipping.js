@@ -7,10 +7,10 @@ const ShippingSchema = new Schema({
     ready_to_ship: {type: String, required: true},
     ship_from_city: {type: String, required: true},
     ship_from_state: {type: String, required: true},
+    returns: {type: String, required: false},
     countries_shipped_to: {type: String, required: true},
     return_policy: {type: String, required: true}
 });
 
 module.exports = mongoose.model('Shipping', ShippingSchema);
 
-//test comment

@@ -8,22 +8,24 @@ const Product = require(path.join(__dirname, '../models/Shipping')); //schema fo
 const products = [
   new Product({
     "product_id": 1,
-    "estimated_delivery": "2020-03-27T00:42:30Z",
+    "estimated_delivery": "2020-10-27T00:42:30Z",
     "ready_to_ship": "1-3 business days",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
-    "return_policy": "No returns or exchanges. But please contact me if you have any problems with your order."
+    "return_policy": "Please contact me if you have any problems with your order"
   }),
 
   new Product({
     "product_id": 2,
-    "estimated_delivery": "2019-11-12T01:17:42Z",
+    "estimated_delivery": "2020-11-12T01:17:42Z",
     "ready_to_ship": "3-5 business days",
     "ship_from_city": "Henderson",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
-    "return_policy": "Returns and exchanges accepted. Exceptions may apply."
+    "return_policy": "Exceptions may apply"
   }),
 
   new Product({
@@ -32,6 +34,7 @@ const products = [
     "ready_to_ship": "non interdum in",
     "ship_from_city": "North Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "ante nulla justo aliquam quis"
   }),
@@ -42,6 +45,7 @@ const products = [
     "ready_to_ship": "aliquam non mauris",
     "ship_from_city": "Tacoma",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "ligula vehicula consequat morbi a ipsum"
   }),
@@ -52,6 +56,7 @@ const products = [
     "ready_to_ship": "eget elit sodales",
     "ship_from_city": "Everett",
     "ship_from_state": "WA",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "tincidunt eu felis fusce posuere felis sed"
   }),
@@ -62,6 +67,7 @@ const products = [
     "ready_to_ship": "at velit eu",
     "ship_from_city": "Lincoln",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "maecenas pulvinar lobortis est phasellus sit amet"
   }),
@@ -72,6 +78,7 @@ const products = [
     "ready_to_ship": "in sagittis dui",
     "ship_from_city": "Pueblo",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "potenti in eleifend quam a odio in hac"
 
@@ -83,6 +90,7 @@ const products = [
     "ready_to_ship": "morbi vestibulum velit",
     "ship_from_city": "Omaha",
     "ship_from_state": "NE",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "dapibus dolor vel est donec"
   }),
@@ -93,6 +101,7 @@ const products = [
     "ready_to_ship": "ultrices vel augue",
     "ship_from_city": "Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "proin leo odio porttitor id"
   }),
@@ -103,6 +112,7 @@ const products = [
     "ready_to_ship": "primis in faucibus",
     "ship_from_city": "Tacoma",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "ipsum ac tellus semper interdum mauris"
   }),
@@ -113,6 +123,7 @@ const products = [
     "ready_to_ship": "interdum in ante",
     "ship_from_city": "Tacoma",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "adipiscing lorem vitae mattis nibh ligula nec"
   }),
@@ -123,6 +134,7 @@ const products = [
     "ready_to_ship": "sapien in sapien",
     "ship_from_city": "Henderson",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "at diam nam tristique tortor eu pede"
   }),
@@ -133,6 +145,7 @@ const products = [
     "ready_to_ship": "orci luctus et",
     "ship_from_city": "Tacoma",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "maecenas pulvinar lobortis est phasellus sit amet"
   }),
@@ -143,6 +156,7 @@ const products = [
     "ready_to_ship": "nibh ligula nec",
     "ship_from_city": "Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nulla sed accumsan felis ut at dolor"
   }),
@@ -153,6 +167,7 @@ const products = [
     "ready_to_ship": "magnis dis parturient",
     "ship_from_city": "Boulder",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "pede lobortis ligula sit amet eleifend"
   }),
@@ -163,6 +178,7 @@ const products = [
     "ready_to_ship": "pede justo lacinia",
     "ship_from_city": "Lincoln",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "morbi porttitor lorem id ligula suspendisse ornare"
   }),
@@ -173,6 +189,7 @@ const products = [
     "ready_to_ship": "morbi vestibulum velit",
     "ship_from_city": "Denver",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "convallis nunc proin at turpis"
   }),
@@ -183,6 +200,7 @@ const products = [
     "ready_to_ship": "eget semper rutrum",
     "ship_from_city": "Tacoma",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "in consequat ut nulla sed accumsan"
   }),
@@ -193,6 +211,7 @@ const products = [
     "ready_to_ship": "vestibulum sed magna",
     "ship_from_city": "Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "quis lectus suspendisse potenti in eleifend"
   }),
@@ -203,6 +222,7 @@ const products = [
     "ready_to_ship": "condimentum neque sapien",
     "ship_from_city": "Spokane",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nibh fusce lacus purus aliquet at"
   }),
@@ -213,6 +233,7 @@ const products = [
     "ready_to_ship": "ut ultrices vel",
     "ship_from_city": "Boulder",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "morbi ut odio cras mi"
 
@@ -224,6 +245,7 @@ const products = [
     "ready_to_ship": "convallis morbi odio",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "justo aliquam quis turpis eget elit sodales scelerisque"
   }),
@@ -234,6 +256,7 @@ const products = [
     "ready_to_ship": "in magna bibendum",
     "ship_from_city": "Omaha",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "amet erat nulla tempus vivamus in felis"
   }),
@@ -244,6 +267,7 @@ const products = [
     "ready_to_ship": "suscipit nulla elit",
     "ship_from_city": "Henderson",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "massa volutpat convallis morbi odio odio elementum eu"
 
@@ -255,6 +279,7 @@ const products = [
     "ready_to_ship": "mi integer ac",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "accumsan odio curabitur convallis duis consequat dui nec"
   }),
@@ -265,6 +290,7 @@ const products = [
     "ready_to_ship": "molestie hendrerit at",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "donec pharetra magna vestibulum aliquet ultrices erat"
 
@@ -276,6 +302,7 @@ const products = [
     "ready_to_ship": "suspendisse potenti cras",
     "ship_from_city": "Reno",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nam ultrices libero non mattis pulvinar nulla"
   }),
@@ -286,6 +313,7 @@ const products = [
     "ready_to_ship": "nulla tempus vivamus",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "mollis molestie lorem quisque ut erat curabitur"
   }),
@@ -296,6 +324,7 @@ const products = [
     "ready_to_ship": "justo eu massa",
     "ship_from_city": "Omaha",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "enim blandit mi in porttitor pede"
   }),
@@ -307,6 +336,7 @@ const products = [
     "ready_to_ship": "dolor sit amet",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nullam sit amet turpis elementum ligula vehicula"
   }),
@@ -317,6 +347,7 @@ const products = [
     "ready_to_ship": "dis parturient montes",
     "ship_from_city": "Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "lacus morbi sem mauris laoreet"
   }),
@@ -327,6 +358,7 @@ const products = [
     "ready_to_ship": "at turpis a",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "justo in blandit ultrices enim lorem ipsum dolor"
   }),
@@ -337,6 +369,7 @@ const products = [
     "ready_to_ship": "nunc commodo placerat",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "tristique est et tempus semper est quam"
   }),
@@ -347,6 +380,7 @@ const products = [
     "ready_to_ship": "ipsum primis in",
     "ship_from_city": "Boulder",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "porttitor lorem id ligula suspendisse ornare consequat"
   }),
@@ -357,6 +391,7 @@ const products = [
     "ready_to_ship": "suscipit nulla elit",
     "ship_from_city": "Lakewood",
     "ship_from_state": "WA",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nulla eget eros elementum pellentesque quisque"
   }),
@@ -367,6 +402,7 @@ const products = [
     "ready_to_ship": "ut erat curabitur",
     "ship_from_city": "Spokane",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "amet nunc viverra dapibus nulla"
   }),
@@ -377,6 +413,7 @@ const products = [
     "ready_to_ship": "consequat morbi a",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "dolor sit amet consectetuer adipiscing"
   }),
@@ -387,6 +424,7 @@ const products = [
     "ready_to_ship": "eros vestibulum ac",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "est quam pharetra magna ac"
   }),
@@ -397,6 +435,7 @@ const products = [
     "ready_to_ship": "nec dui luctus",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "rutrum neque aenean auctor gravida sem praesent id"
   }),
@@ -407,6 +446,7 @@ const products = [
     "ready_to_ship": "est phasellus sit",
     "ship_from_city": "Sparks",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "posuere felis sed lacus morbi sem mauris"
   }),
@@ -417,6 +457,7 @@ const products = [
     "ready_to_ship": "ac nulla sed",
     "ship_from_city": "Lincoln",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "venenatis tristique fusce congue diam"
   }),
@@ -427,6 +468,7 @@ const products = [
     "ready_to_ship": "laoreet ut rhoncus",
     "ship_from_city": "Denver",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "sem fusce consequat nulla nisl nunc"
   }),
@@ -437,6 +479,7 @@ const products = [
     "ready_to_ship": "mauris viverra diam",
     "ship_from_city": "Tacoma",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "scelerisque mauris sit amet eros suspendisse"
   }),
@@ -447,6 +490,7 @@ const products = [
     "ready_to_ship": "convallis nunc proin",
     "ship_from_city": "Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "at feugiat non pretium quis lectus suspendisse potenti"
   }),
@@ -457,6 +501,7 @@ const products = [
     "ready_to_ship": "justo maecenas rhoncus",
     "ship_from_city": "Portland",
     "ship_from_state": "ME",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "quam sollicitudin vitae consectetuer eget rutrum at lorem"
   }),
@@ -467,6 +512,7 @@ const products = [
     "ready_to_ship": "est lacinia nisi",
     "ship_from_city": "Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "cursus id turpis integer aliquet massa id"
   }),
@@ -477,6 +523,7 @@ const products = [
     "ready_to_ship": "primis in faucibus",
     "ship_from_city": "Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "lacus morbi sem mauris laoreet ut"
   }),
@@ -487,6 +534,7 @@ const products = [
     "ready_to_ship": "leo odio condimentum",
     "ship_from_city": "Omaha",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "vestibulum sit amet cursus id"
   }),
@@ -497,6 +545,7 @@ const products = [
     "ready_to_ship": "vel accumsan tellus",
     "ship_from_city": "Aurora",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nec sem duis aliquam convallis"
   }),
@@ -507,6 +556,7 @@ const products = [
     "ready_to_ship": "dolor sit amet",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "in lacus curabitur at ipsum ac tellus semper"
   }),
@@ -517,6 +567,7 @@ const products = [
     "ready_to_ship": "curae nulla dapibus",
     "ship_from_city": "Omaha",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "quis orci nullam molestie nibh"
   }),
@@ -527,6 +578,7 @@ const products = [
     "ready_to_ship": "hac habitasse platea",
     "ship_from_city": "Spokane",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "leo odio condimentum id luctus nec"
   }),
@@ -537,6 +589,7 @@ const products = [
     "ready_to_ship": "sapien in sapien",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "pretium iaculis diam erat fermentum justo nec condimentum"
   }),
@@ -547,6 +600,7 @@ const products = [
     "ready_to_ship": "a pede posuere",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "sapien cum sociis natoque penatibus et magnis dis"
   }),
@@ -557,6 +611,7 @@ const products = [
     "ready_to_ship": "nunc nisl duis",
     "ship_from_city": "Yakima",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "donec posuere metus vitae ipsum aliquam non"
   }),
@@ -567,6 +622,7 @@ const products = [
     "ready_to_ship": "consequat in consequat",
     "ship_from_city": "Littleton",
     "ship_from_state": "CO",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "donec ut dolor morbi vel lectus in"
   }),
@@ -577,6 +633,7 @@ const products = [
     "ready_to_ship": "nisi venenatis tristique",
     "ship_from_city": "Tacoma",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "penatibus et magnis dis parturient"
   }),
@@ -587,6 +644,7 @@ const products = [
     "ready_to_ship": "sapien dignissim vestibulum",
     "ship_from_city": "Denver",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nunc vestibulum ante ipsum primis"
   }),
@@ -597,6 +655,7 @@ const products = [
     "ready_to_ship": "dolor morbi vel",
     "ship_from_city": "Yakima",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "montes nascetur ridiculus mus etiam vel augue"
   }),
@@ -607,6 +666,7 @@ const products = [
     "ready_to_ship": "vestibulum quam sapien",
     "ship_from_city": "Boulder",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "sed accumsan felis ut at dolor"
   }),
@@ -617,6 +677,7 @@ const products = [
     "ready_to_ship": "eu felis fusce",
     "ship_from_city": "Englewood",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nisl venenatis lacinia aenean sit"
   }),
@@ -627,6 +688,7 @@ const products = [
     "ready_to_ship": "in faucibus orci",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "ipsum primis in faucibus orci luctus et"
   }),
@@ -637,6 +699,7 @@ const products = [
     "ready_to_ship": "duis aliquam convallis",
     "ship_from_city": "Henderson",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "sollicitudin mi sit amet lobortis"
   }),
@@ -647,6 +710,7 @@ const products = [
     "ready_to_ship": "amet turpis elementum",
     "ship_from_city": "Spokane",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "fermentum justo nec condimentum neque sapien placerat"
   }),
@@ -657,6 +721,7 @@ const products = [
     "ready_to_ship": "non quam nec",
     "ship_from_city": "North Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "rutrum ac lobortis vel dapibus at diam nam"
   }),
@@ -667,6 +732,7 @@ const products = [
     "ready_to_ship": "posuere metus vitae",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "sit amet cursus id turpis integer aliquet massa"
   }),
@@ -677,6 +743,7 @@ const products = [
     "ready_to_ship": "dolor sit amet",
     "ship_from_city": "Grand Junction",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "aliquam non mauris morbi non"
   }),
@@ -687,6 +754,7 @@ const products = [
     "ready_to_ship": "justo aliquam quis",
     "ship_from_city": "Fort Collins",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "duis ac nibh fusce lacus"
   }),
@@ -697,6 +765,7 @@ const products = [
     "ready_to_ship": "eget semper rutrum",
     "ship_from_city": "Greeley",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "lorem quisque ut erat curabitur gravida"
   }),
@@ -707,6 +776,7 @@ const products = [
     "ready_to_ship": "volutpat convallis morbi",
     "ship_from_city": "Boulder",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "leo odio porttitor id consequat in consequat"
   }),
@@ -717,6 +787,7 @@ const products = [
     "ready_to_ship": "pede ac diam",
     "ship_from_city": "Denver",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "mauris eget massa tempor convallis"
   }),
@@ -727,6 +798,7 @@ const products = [
     "ready_to_ship": "faucibus orci luctus",
     "ship_from_city": "Lincoln",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "tristique est et tempus semper"
   }),
@@ -737,6 +809,7 @@ const products = [
     "ready_to_ship": "bibendum imperdiet nullam",
     "ship_from_city": "Spokane",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "ultrices posuere cubilia curae nulla dapibus dolor vel"
   }),
@@ -747,6 +820,7 @@ const products = [
     "ready_to_ship": "proin interdum mauris",
     "ship_from_city": "Carson City",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "sagittis dui vel nisl duis ac nibh fusce"
   }),
@@ -757,6 +831,7 @@ const products = [
     "ready_to_ship": "massa id lobortis",
     "ship_from_city": "Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "mus etiam vel augue vestibulum rutrum rutrum"
   }),
@@ -767,6 +842,7 @@ const products = [
     "ready_to_ship": "suspendisse potenti in",
     "ship_from_city": "Everett",
     "ship_from_state": "WA",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "eleifend luctus ultricies eu nibh quisque"
   }),
@@ -777,6 +853,7 @@ const products = [
     "ready_to_ship": "felis ut at",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "odio consequat varius integer ac leo pellentesque"
   }),
@@ -787,6 +864,7 @@ const products = [
     "ready_to_ship": "varius integer ac",
     "ship_from_city": "Tacoma",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "ante vestibulum ante ipsum primis in faucibus orci"
   }),
@@ -797,6 +875,7 @@ const products = [
     "ready_to_ship": "in leo maecenas",
     "ship_from_city": "Omaha",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "ultrices posuere cubilia curae nulla"
   }),
@@ -807,6 +886,7 @@ const products = [
     "ready_to_ship": "sollicitudin ut suscipit",
     "ship_from_city": "Reno",
     "ship_from_state": "NV",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "sapien arcu sed augue aliquam"
   }),
@@ -817,6 +897,7 @@ const products = [
     "ready_to_ship": "luctus cum sociis",
     "ship_from_city": "Omaha",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "odio in hac habitasse platea"
   }),
@@ -827,6 +908,7 @@ const products = [
     "ready_to_ship": "non ligula pellentesque",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "eros viverra eget congue eget semper rutrum nulla"
   }),
@@ -837,6 +919,7 @@ const products = [
     "ready_to_ship": "auctor sed tristique",
     "ship_from_city": "Aurora",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "pede malesuada in imperdiet et commodo vulputate"
   }),
@@ -847,6 +930,7 @@ const products = [
     "ready_to_ship": "aliquet massa id",
     "ship_from_city": "Tacoma",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "a feugiat et eros vestibulum ac est lacinia"
   }),
@@ -857,6 +941,7 @@ const products = [
     "ready_to_ship": "malesuada in imperdiet",
     "ship_from_city": "North Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "vel ipsum praesent blandit lacinia erat vestibulum sed"
   }),
@@ -867,6 +952,7 @@ const products = [
     "ready_to_ship": "sapien arcu sed",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "viverra pede ac diam cras pellentesque"
   }),
@@ -875,8 +961,9 @@ const products = [
     "product_id": 87,
     "estimated_delivery": "2019-09-30T11:30:45Z",
     "ready_to_ship": "praesent blandit nam",
-    "ship_from_city": "Colorado Springs",
+    "ship_from_city": "Pueblo",
     "ship_from_state": "CO",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "integer tincidunt ante vel ipsum praesent"
   }),
@@ -887,6 +974,7 @@ const products = [
     "ready_to_ship": "quis turpis eget",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nam dui proin leo odio porttitor id consequat"
   }),
@@ -897,6 +985,7 @@ const products = [
     "ready_to_ship": "sollicitudin vitae consectetuer",
     "ship_from_city": "Denver",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "lorem quisque ut erat curabitur gravida nisi"
   }),
@@ -907,6 +996,7 @@ const products = [
     "ready_to_ship": "mattis nibh ligula",
     "ship_from_city": "Littleton",
     "ship_from_state": "CO",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "ultrices phasellus id sapien in"
   }),
@@ -917,6 +1007,7 @@ const products = [
     "ready_to_ship": "gravida sem praesent",
     "ship_from_city": "Spokane",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "pellentesque viverra pede ac diam cras pellentesque volutpat"
   }),
@@ -927,6 +1018,7 @@ const products = [
     "ready_to_ship": "elementum in hac",
     "ship_from_city": "Kent",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "lorem ipsum dolor sit amet consectetuer adipiscing"
   }),
@@ -937,6 +1029,7 @@ const products = [
     "ready_to_ship": "sodales scelerisque mauris",
     "ship_from_city": "Lincoln",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "et ultrices posuere cubilia curae mauris viverra diam"
   }),
@@ -947,6 +1040,7 @@ const products = [
     "ready_to_ship": "imperdiet nullam orci",
     "ship_from_city": "Omaha",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "sapien placerat ante nulla justo aliquam quis"
   }),
@@ -957,6 +1051,7 @@ const products = [
     "ready_to_ship": "magna vestibulum aliquet",
     "ship_from_city": "Omaha",
     "ship_from_state": "NE",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "luctus rutrum nulla tellus in"
   }),
@@ -967,6 +1062,7 @@ const products = [
     "ready_to_ship": "vulputate justo in",
     "ship_from_city": "Henderson",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "est quam pharetra magna ac"
   }),
@@ -977,6 +1073,7 @@ const products = [
     "ready_to_ship": "quis augue luctus",
     "ship_from_city": "Seattle",
     "ship_from_state": "WA",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "volutpat sapien arcu sed augue aliquam erat volutpat"
   }),
@@ -987,6 +1084,7 @@ const products = [
     "ready_to_ship": "nam congue risus",
     "ship_from_city": "Colorado Springs",
     "ship_from_state": "CO",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "nibh in lectus pellentesque at nulla suspendisse potenti"
   }),
@@ -997,6 +1095,7 @@ const products = [
     "ready_to_ship": "aenean fermentum donec",
     "ship_from_city": "Denver",
     "ship_from_state": "CO",
+    "returns": "Not Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "primis in faucibus orci luctus et ultrices posuere"
   }),
@@ -1007,6 +1106,7 @@ const products = [
     "ready_to_ship": "ante ipsum primis",
     "ship_from_city": "Las Vegas",
     "ship_from_state": "NV",
+    "returns": "Accepted",
     "countries_shipped_to": "United States",
     "return_policy": "vestibulum rutrum rutrum neque aenean auctor gravida sem"
   })

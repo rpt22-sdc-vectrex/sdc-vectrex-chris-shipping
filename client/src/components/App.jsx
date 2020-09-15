@@ -17,6 +17,7 @@ class App extends Component {
       city: '',
       state: '',
       estimatedDelivery: '',
+      returns: '',
     };
   }
 
@@ -74,6 +75,7 @@ class App extends Component {
         shippingCost: costToShip,
         deliverTo: shipping.countries_shipped_to,
         policies: shipping.return_policy,
+        returns: shipping.returns,
         readyToShip: shipping.ready_to_ship,
       });
     } catch (error) {
@@ -97,6 +99,7 @@ class App extends Component {
         />
 
         <Policies
+          returns={this.state.returns}
           policies={this.state.policies}
         />
 
