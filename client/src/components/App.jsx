@@ -7,8 +7,13 @@ import EstimatedDelivery from './EstimatedDelivery.jsx';
 import From from './From.jsx';
 import Policies from './Policies.jsx';
 import ReadyToShip from './ReadyToShip.jsx';
+import styled from 'styled-components';
 
 const axios = require('axios').default;
+
+const ShippingContainer = styled.div`
+  display: flex;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -85,7 +90,11 @@ class App extends Component {
 
   render() {
     return (
+
       <div className="shippingBox" data-test="appComponent">
+
+        <ShippingContainer>
+
         <EstimatedDelivery
           estimatedDelivery={this.state.estimatedDelivery}
         />
@@ -94,23 +103,33 @@ class App extends Component {
           readyToShip={this.state.readyToShip}
         />
 
+        </ShippingContainer>
+
+        <ShippingContainer>
+        <From
+          city={this.state.city}
+          state={this.state.state}
+        />
+
         <CostToShip
           shippingCost={this.state.shippingCost}
         />
 
+
+        </ShippingContainer>
+
+        <ShippingContainer>
         <Policies
           returns={this.state.returns}
           policies={this.state.policies}
         />
+        </ShippingContainer>
 
         <DeliverTo
           deliverTo={this.state.deliverTo}
         />
 
-        <From
-          city={this.state.city}
-          state={this.state.state}
-        />
+
 
       </div>
     );
