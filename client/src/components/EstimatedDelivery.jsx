@@ -11,17 +11,21 @@ const ShippingContainerRow = styled.div`
 `;
 
 const DeliveryStyle = styled.div`
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   color: #595959;
+  font-weight: 300;
+  line-height: 18px;
 `;
 
 const DeliveryStyleDash = styled.div`
-  font-size: 14px;
+  font-size: 13px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
   color: #595959;
   text-decoration: underline;
   text-decoration-style: dashed;
+  font-weight: 300;
+  line-height: 18px;
 `;
 
 const DeliveryDataStyle = styled.div`

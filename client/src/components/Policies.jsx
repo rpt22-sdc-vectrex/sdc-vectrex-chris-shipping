@@ -18,7 +18,6 @@ const PoliciesDataStyle = styled.div`
   margin: 6px 0px 0px;
   font-family: "GuardianEgypt","Guardian-EgypTT","Merriweather",serif;
   -webkit-font-smoothing: antialiased;
-  margin 6px 0px 0px;
 `;
 
 function Policies(props) {

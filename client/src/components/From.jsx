@@ -26,7 +26,7 @@ const FromDataStyle = styled.div`
   line-height: 32px;
   font-family: "GuardianEgypt","Guardian-EgypTT","Merriweather",serif;
   -webkit-font-smoothing: antialiased;
-  margin 6px 0px 0px;
+  margin: 6px 0px 0px;
 `;
 
 function From(props) {
