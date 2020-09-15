@@ -1,12 +1,28 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const PoliciesStyle = styled.div`
+  font-size: 13px;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  color: #595959
+`;
+
+const PoliciesDataStyle = styled.div`
+  color: #222222
+  font-family: "Guardian-EgypTT",serif;
+  font-weight: 300;
+  letter-spacing: 0.35px;
+  font-size: 20px;
+  line-height: 32px;
+`;
 
 function Policies(props) {
   return (
     <div>
-      <h1 data-test="policiesComponent">Policies</h1>
-      <h3>
+      <PoliciesStyle data-test="policiesComponent">Policies</PoliciesStyle>
+      <PoliciesDataStyle>
         {props.policies}
-      </h3>
+      </PoliciesDataStyle>
     </div>
   );
 }
