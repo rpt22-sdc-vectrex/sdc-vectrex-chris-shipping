@@ -9,11 +9,12 @@ const CostStyle = styled.div`
 
 const CostDataStyle = styled.div`
   color: #222222
-  font-family: "Guardian-EgypTT",serif;
   font-weight: 300;
   letter-spacing: 0.35px;
   font-size: 20px;
   line-height: 32px;
+  font-family: "GuardianEgypt","Guardian-EgypTT","Merriweather",serif;
+  -webkit-font-smoothing: antialiased;
 `;
 
 function CostToShip(props) {
