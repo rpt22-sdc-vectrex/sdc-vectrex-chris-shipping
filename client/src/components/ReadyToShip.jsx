@@ -8,12 +8,13 @@ const ReadyStyle = styled.div`
 `;
 
 const ReadyDataStyle = styled.div`
-  color: #222222
-  font-family: "Guardian-EgypTT",serif;
+  color: #222222;
   font-weight: 300;
   letter-spacing: 0.35px;
   font-size: 20px;
   line-height: 32px;
+  font-family: "GuardianEgypt","Guardian-EgypTT","Merriweather",serif;
+  -webkit-font-smoothing: antialiased;
 `;
 
 function ReadyToShip(props) {
