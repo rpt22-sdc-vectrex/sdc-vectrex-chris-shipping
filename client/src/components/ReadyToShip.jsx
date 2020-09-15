@@ -12,7 +12,7 @@ const ShippingContainerRow = styled.div`
 const ReadyStyle = styled.div`
   font-size: 13px;
   font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
-  color: #595959
+  color: #595959;
   line-height: 18px;
   font-weight: 300;
 `;
