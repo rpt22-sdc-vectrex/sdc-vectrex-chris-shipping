@@ -19,7 +19,7 @@ const CostStyle = styled.div`
 `;
 
 const CostDataStyle = styled.div`
-  color: #222222
+  color: #222222;
   font-weight: 300;
   letter-spacing: 0.35px;
   font-size: 26px;
