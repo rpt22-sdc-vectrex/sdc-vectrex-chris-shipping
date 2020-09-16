@@ -45,19 +45,11 @@ class App extends Component {
     return this.location;
   }
 
-  getShippingCostData(costArray, id) {
-    for (let i = 0; i < costArray.length; i++) {
-      if (id === costArray[i].product_id) {
-        return costArray[i];
-      }
-    }
-  }
-
   getShippingCost(data) {
-    if (data.isFreeShipping) {
+    if (data.is_free_shipping) {
       return 'Free';
     } else {
-      let cost = '$' + data.costOfDelivery.toString();
+      let cost = '$' + data.shipping_cost;
       return cost;
     }
   }
@@ -68,10 +60,7 @@ class App extends Component {
     try {
       const response = await axios.get(`${location}/shipping-api/${id}`);
       const shipping = response.data;
-      const costResponse = await axios.get(`${location}/productInfo-api`);
-      console.log('PRODUCTINFO', costResponse);
-      const itemShippingCostData = this.getShippingCostData(costResponse.data, id);
-      const costToShip = this.getShippingCost(itemShippingCostData);
+      const costToShip = this.getShippingCost(shipping);
       let delivery = shipping.estimated_delivery;
       delivery = moment(delivery).format('MMM Do YYYY');
 
