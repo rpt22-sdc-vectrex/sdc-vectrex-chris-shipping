@@ -68,7 +68,8 @@ class App extends Component {
     try {
       const response = await axios.get(`${location}/shipping-api/${id}`);
       const shipping = response.data;
-      const costResponse = await axios.get(`${location}/productInfo-api/`);
+      const costResponse = await axios.get(`${location}/productInfo-api`);
+      console.log('PRODUCTINFO', costResponse);
       const itemShippingCostData = this.getShippingCostData(costResponse.data, id);
       const costToShip = this.getShippingCost(itemShippingCostData);
       let delivery = shipping.estimated_delivery;
