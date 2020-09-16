@@ -96,41 +96,39 @@ class App extends Component {
 
         <ShippingContainer>
 
-        <EstimatedDelivery
-          estimatedDelivery={this.state.estimatedDelivery}
-        />
+          <EstimatedDelivery
+            estimatedDelivery={this.state.estimatedDelivery}
+          />
 
-        <ReadyToShip
-          readyToShip={this.state.readyToShip}
-        />
-
-        </ShippingContainer>
-
-        <ShippingContainer>
-        <From
-          city={this.state.city}
-          state={this.state.state}
-        />
-
-        <CostToShip
-          shippingCost={this.state.shippingCost}
-        />
-
+          <ReadyToShip
+            readyToShip={this.state.readyToShip}
+          />
 
         </ShippingContainer>
 
         <ShippingContainer>
-        <Policies
-          returns={this.state.returns}
-          policies={this.state.policies}
-        />
+          <From
+            city={this.state.city}
+            state={this.state.state}
+          />
+
+          <CostToShip
+            shippingCost={this.state.shippingCost}
+          />
+
+
+        </ShippingContainer>
+
+        <ShippingContainer>
+          <Policies
+            returns={this.state.returns}
+            policies={this.state.policies}
+          />
         </ShippingContainer>
 
         <DeliverTo
           deliverTo={this.state.deliverTo}
         />
-
-
 
       </div>
     );
