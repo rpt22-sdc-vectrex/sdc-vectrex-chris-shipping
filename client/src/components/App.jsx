@@ -7,8 +7,13 @@ import EstimatedDelivery from './EstimatedDelivery.jsx';
 import From from './From.jsx';
 import Policies from './Policies.jsx';
 import ReadyToShip from './ReadyToShip.jsx';
+import styled from 'styled-components';
 
 const axios = require('axios').default;
+
+const ShippingContainer = styled.div`
+  display: flex;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -17,6 +22,8 @@ class App extends Component {
       city: '',
       state: '',
       estimatedDelivery: '',
+      returns: '',
+      shippingCost: '',
     };
   }
 
@@ -38,19 +45,11 @@ class App extends Component {
     return this.location;
   }
 
-  getShippingCostData(costArray, id) {
-    for (let i = 0; i < costArray.length; i++) {
-      if (id === costArray[i].product_id) {
-        return costArray[i];
-      }
-    }
-  }
-
   getShippingCost(data) {
-    if (data.isFreeShipping) {
+    if (data.is_free_shipping) {
       return 'Free';
     } else {
-      let cost = '$' + data.costOfDelivery.toString();
+      let cost = '$' + data.shipping_cost;
       return cost;
     }
   }
@@ -61,9 +60,7 @@ class App extends Component {
     try {
       const response = await axios.get(`${location}/shipping-api/${id}`);
       const shipping = response.data;
-      const costResponse = await axios.get('https://valeriia-ten-inventory.s3.us-east-2.amazonaws.com/100inventory.json');
-      const itemShippingCostData = this.getShippingCostData(costResponse.data, id);
-      const costToShip = this.getShippingCost(itemShippingCostData);
+      const costToShip = this.getShippingCost(shipping);
       let delivery = shipping.estimated_delivery;
       delivery = moment(delivery).format('MMM Do YYYY');
 
@@ -74,6 +71,7 @@ class App extends Component {
         shippingCost: costToShip,
         deliverTo: shipping.countries_shipped_to,
         policies: shipping.return_policy,
+        returns: shipping.returns,
         readyToShip: shipping.ready_to_ship,
       });
     } catch (error) {
@@ -83,26 +81,45 @@ class App extends Component {
 
   render() {
     return (
+
       <div className="shippingBox" data-test="appComponent">
-        <CostToShip
-          shippingCost={this.state.shippingCost}
-        />
+
+        <ShippingContainer>
+
+          <EstimatedDelivery
+            estimatedDelivery={this.state.estimatedDelivery}
+          />
+
+          <ReadyToShip
+            readyToShip={this.state.readyToShip}
+          />
+
+        </ShippingContainer>
+
+        <ShippingContainer>
+          <From
+            city={this.state.city}
+            state={this.state.state}
+          />
+
+          <CostToShip
+            shippingCost={this.state.shippingCost}
+          />
+
+
+        </ShippingContainer>
+
+        <ShippingContainer>
+          <Policies
+            returns={this.state.returns}
+            policies={this.state.policies}
+          />
+        </ShippingContainer>
+
         <DeliverTo
           deliverTo={this.state.deliverTo}
         />
-        <EstimatedDelivery
-          estimatedDelivery={this.state.estimatedDelivery}
-        />
-        <From
-          city={this.state.city}
-          state={this.state.state}
-        />
-        <Policies
-          policies={this.state.policies}
-        />
-        <ReadyToShip
-          readyToShip={this.state.readyToShip}
-        />
+
       </div>
     );
   }
