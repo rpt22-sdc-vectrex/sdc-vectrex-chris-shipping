@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const dotenv = require('dotenv');
 const items = require('./routes/api/items');
+const itemInfo = require('./routes/api/itemInfo');
 const routes = require('./routes/general/routes');
 
 //  const bodyParser = require('body-parser');
@@ -29,6 +30,7 @@ app.use(express.static('client'));
 
 //  use routes
 app.use('/shipping-api/', items);
+app.use('/productInfo-api/', itemInfo);
 app.use('/', routes);
 
 app.listen(port, () => {

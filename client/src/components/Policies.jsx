@@ -1,12 +1,35 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const PoliciesStyle = styled.div`
+  font-size: 13px;
+  font-family: "Graphik Webfont",-apple-system,BlinkMacSystemFont,"Roboto","Droid Sans","Segoe UI","Helvetica",Arial,sans-serif;
+  color: #595959;
+  font-weight: 300;
+  line-height: 18px;
+`;
+
+const PoliciesDataStyle = styled.div`
+  color: #222222;
+  font-weight: 300;
+  letter-spacing: 0.35px;
+  font-size: 26px;
+  line-height: 32px;
+  margin: 6px 0px 0px;
+  font-family: "GuardianEgypt","Guardian-EgypTT","Merriweather",serif;
+  -webkit-font-smoothing: antialiased;
+`;
 
 function Policies(props) {
   return (
     <div>
-      <h1 data-test="policiesComponent">Policies</h1>
-      <h3>
+      <PoliciesStyle data-test="policiesComponent">Returns and Exchanges</PoliciesStyle>
+      <PoliciesDataStyle>
+        {props.returns}
+      </PoliciesDataStyle>
+      <PoliciesStyle>
         {props.policies}
-      </h3>
+      </PoliciesStyle>
     </div>
   );
 }
