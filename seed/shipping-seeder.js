@@ -1,8 +1,10 @@
 //requirements
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const path = require ('path');
-const Product = require(path.join(__dirname, '../models/Shipping')); //schema for this collection
+const path = require('path');
+
+// eslint-disable-next-line import/no-dynamic-require
+const Product = require(path.join(__dirname, '../models/shipping')); //schema for this collection
 
 //List of items to add to my dev and test databases - product_id 1-100 match product ids from other team member's dbs. The fake data may not match.
 const products = [
@@ -36,7 +38,7 @@ const products = [
     "product_id": 3,
     "estimated_delivery": "2020-08-22T22:08:10Z",
     "ready_to_ship": "non interdum in",
-    "is_free_shipping": false,
+    "is_free_shipping": true,
     "shipping_cost": "5.00",
     "ship_from_city": "North Las Vegas",
     "ship_from_state": "NV",
