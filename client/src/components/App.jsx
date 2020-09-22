@@ -41,6 +41,7 @@ class App extends Component {
 
   setProductLocation() {
     const productLocation = window.location.origin;
+    console.log(productLocation);
     this.location = productLocation;
     return this.location;
   }
