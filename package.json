@@ -1,6 +1,7 @@
 {
   "name": "shipping",
   "jest": {
+    "testURL": "http://myetsytest.com/5",
     "verbose": true,
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
