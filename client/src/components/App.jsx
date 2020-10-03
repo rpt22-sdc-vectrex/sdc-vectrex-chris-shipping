@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react';
 import regeneratorRuntime from "regenerator-runtime";
 import moment from 'moment';
@@ -33,6 +34,7 @@ class App extends Component {
 
   setProductId() {
     let productId = window.location.pathname;
+    console.log(productId);
     productId = productId.slice(1);
     this.id = productId || 1;
     this.id = parseInt(this.id, 10);
@@ -41,7 +43,7 @@ class App extends Component {
 
   setProductLocation() {
     const productLocation = window.location.origin;
-    console.log(productLocation);
+    // console.log(productLocation);
     this.location = productLocation;
     return this.location;
   }
