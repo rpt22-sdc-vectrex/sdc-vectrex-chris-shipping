@@ -1,5 +1,7 @@
+/* eslint-disable no-await-in-loop */
 const faker = require('faker');
 const JSONStream = require('JSONStream');
+const moment = require('moment');
 const fs = require('fs');
 
 const objectBuilder = async (amount) => {
