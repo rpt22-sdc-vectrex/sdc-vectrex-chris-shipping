@@ -34,7 +34,7 @@ router.get('/:productId', (req, res) => {
 });
 
 // UPDATE
-router.post('/:productId/update/', (req, res) => {
+router.put('/:productId/update/', (req, res) => {
   const { productId } = req.params;
   const filter = { product_id: productId };
   const record = req.body;

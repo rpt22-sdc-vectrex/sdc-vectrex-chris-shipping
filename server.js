@@ -40,5 +40,5 @@ app.use('/productInfo-api/', itemInfo);
 app.use('/', routes);
 
 app.listen(port, () => {
-  console.log(`Shipping server is up and running on port ${port}`);
+  console.log(`Shipping server is up and running on port ${port}: http://localhost:${port}`);
 });

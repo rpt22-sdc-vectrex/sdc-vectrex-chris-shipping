@@ -11,3 +11,5 @@ client/dist
 
 #Ignore ssh keys
 FEC.pem
+
+mockData3.json
