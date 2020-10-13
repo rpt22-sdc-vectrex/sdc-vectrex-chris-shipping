@@ -48,9 +48,7 @@ const doStream = readStream.pipe(
 // further piping our stream through ndjson parse npm package, which parses
 // new-line-delimited json files
 const transformStream = doStream.pipe(
-  ndjson.parse({
-    highWaterMark: 10,
-  }),
+  ndjson.parse(),
 );
 /* our batchingStream below is going to take our data
   and cut it into bite size chunks, pass them to our transformStream(ndjson
@@ -58,7 +56,7 @@ const transformStream = doStream.pipe(
 */
 const batchingStream = ((source) => {
   // set batchSize accordingly to what your cpu can handle
-  const batchSize = 100000;
+  const batchSize = 10000;
   let batchBuffer = [];
   // eslint-disable-next-line no-shadow
   const batchingStream = source.pipe(
