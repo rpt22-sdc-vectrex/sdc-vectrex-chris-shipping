@@ -9,13 +9,10 @@ const router = express.Router();
 router.post('/create', (req, res) => {
   const record = req.body;
   Shipping.create(record)
-    .then(() => {
+    .then((data) => {
       console.log('Record added!');
-      res.sendStatus(200);
-    })
-    .catch((err) => {
-      console.log('Error adding record: ', err);
-      res.sendStatus(500);
+      res.status(200);
+      res.json(data);
     });
 });
 
@@ -24,12 +21,18 @@ router.get('/all', (req, res) => {
   console.log('Returning all items');
   Shipping.find()
     .sort({ product_id: 1 })
-    .then((items) => res.json(items));
+    .then((items) => res.json(items))
+    .catch((err) => {
+      console.log('Record not found: ', err);
+      res.sendStatus(400);
+    });
 });
 
 router.get('/:productId', (req, res) => {
   console.log(`Returning item ${req.params.productId}`);
-  Shipping.findOne({ product_id: req.params.productId })
+  Shipping.findOne({
+    product_id: req.params.productId,
+  })
     .then((item) => res.json(item));
 });
 
@@ -45,7 +48,8 @@ router.put('/:productId/update/', (req, res) => {
   )
     .then((data) => {
       console.log('Record updated: ', data);
-      res.sendStatus(200);
+      res.status(200);
+      res.json(data);
     })
     .catch((err) => {
       console.log('Error updating record: ', err);
@@ -60,7 +64,8 @@ router.post('/:productId/delete/', (req, res) => {
   Shipping.deleteOne(filter)
     .then((data) => {
       console.log('Record deleted: ', data);
-      res.sendStatus(200);
+      res.status(200);
+      res.json(data);
     })
     .catch((err) => {
       console.log('Error deleting record: ', err);

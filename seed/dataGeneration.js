@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-await-in-loop */
 const faker = require('faker');
 const JSONStream = require('JSONStream');
@@ -19,7 +20,7 @@ const objectBuilder = async (amount) => {
         product_id: i,
         estimated_delivery: faker.date.future(),
         ready_to_ship: 'eu felis fusce',
-        is_free_shipping: true ? i % 2 === 0 : false,
+        is_free_shipping: i % 2 !== 0,
         shipping_cost: faker.commerce.price(),
         ship_from_city: faker.address.city(),
         ship_from_state: faker.address.state(),
