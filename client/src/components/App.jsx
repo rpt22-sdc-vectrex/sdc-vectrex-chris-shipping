@@ -1,14 +1,15 @@
+/* eslint-disable import/extensions */
+/* eslint-disable class-methods-use-this */
 /* eslint-disable no-console */
 import React, { Component } from 'react';
-import regeneratorRuntime from "regenerator-runtime";
 import moment from 'moment';
+import styled from 'styled-components';
 import CostToShip from './CostToShip.jsx';
 import DeliverTo from './DeliverTo.jsx';
 import EstimatedDelivery from './EstimatedDelivery.jsx';
 import From from './From.jsx';
 import Policies from './Policies.jsx';
 import ReadyToShip from './ReadyToShip.jsx';
-import styled from 'styled-components';
 
 const axios = require('axios').default;
 
@@ -51,10 +52,9 @@ class App extends Component {
   getShippingCost(data) {
     if (data.is_free_shipping) {
       return 'Free';
-    } else {
-      let cost = '$' + data.shipping_cost;
-      return cost;
     }
+    const cost = `$${data.shipping_cost}`;
+    return cost;
   }
 
   async getProduct() {
@@ -83,6 +83,16 @@ class App extends Component {
   }
 
   render() {
+    const {
+      estimatedDelivery,
+      readyToShip,
+      city,
+      state,
+      shippingCost,
+      returns,
+      policies,
+      deliverTo,
+    } = this.state;
     return (
 
       <div className="shippingBox" data-test="appComponent">
@@ -90,37 +100,36 @@ class App extends Component {
         <ShippingContainer>
 
           <EstimatedDelivery
-            estimatedDelivery={this.state.estimatedDelivery}
+            estimatedDelivery={estimatedDelivery}
           />
 
           <ReadyToShip
-            readyToShip={this.state.readyToShip}
+            readyToShip={readyToShip}
           />
 
         </ShippingContainer>
 
         <ShippingContainer>
           <From
-            city={this.state.city}
-            state={this.state.state}
+            city={city}
+            state={state}
           />
 
           <CostToShip
-            shippingCost={this.state.shippingCost}
+            shippingCost={shippingCost}
           />
-
 
         </ShippingContainer>
 
         <ShippingContainer>
           <Policies
-            returns={this.state.returns}
-            policies={this.state.policies}
+            returns={returns}
+            policies={policies}
           />
         </ShippingContainer>
 
         <DeliverTo
-          deliverTo={this.state.deliverTo}
+          deliverTo={deliverTo}
         />
 
       </div>
