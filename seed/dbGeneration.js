@@ -9,7 +9,6 @@ const fs = require('fs');
 const moment = require('moment');
 const through2 = require('through2');
 const ndjson = require('ndjson');
-const objectBuilder = require('./dataGeneration');
 
 const Shipping = require('../models/shipping.js');
 
