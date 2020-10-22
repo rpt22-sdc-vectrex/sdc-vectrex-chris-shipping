@@ -1,11 +1,11 @@
 /* eslint-disable no-console */
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
+const couchbase = require('couchbase');
 const path = require('path');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-const items = require('./routes/api/items');
+const couchdbRoutes = require('./routes/api/couchdbRoutes.js');
 
 const port = process.env.PORT || 7100;
 
@@ -13,28 +13,23 @@ const app = express();
 
 dotenv.config({ path: path.join(__dirname, './.env') });
 
-//  connect to mongo
-mongoose
-  .connect(
-    process.env.DB_CONNECTION,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-    }, // per deprecation warnings
-  )
-  .then(() => console.log('DB Connected!'))
-  .catch((err) => console.log(err));
+// connect to couchbase
+const cluster = new couchbase.Cluster(process.env.CB_HOST, {
+  username: process.env.CB_USER,
+  password: process.env.CB_PW,
+});
 
-//  Begin Middleware
+const bucket = cluster.bucket('shipping-bucket');
+const collection = bucket.defaultCollection();
+module.exports.collection = collection;
+
+// middleware
 app.use(cors());
 app.use(bodyParser.json());
-
-//  serve static files
 app.use(express.static('client'));
 
-//  use routes
-app.use('/shipping-api/', items);
+// routes
+app.use('/', couchdbRoutes);
 
 app.listen(port, () => {
   console.log(`Shipping server is up and running on port ${port}`);
