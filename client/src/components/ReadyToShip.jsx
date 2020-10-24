@@ -29,11 +29,12 @@ const ReadyDataStyle = styled.div`
 `;
 
 function ReadyToShip(props) {
+  const { readyToShip } = props;
   return (
     <ShippingContainerRow>
       <ReadyStyle data-test="readyComponent">Ready to ship in</ReadyStyle>
       <ReadyDataStyle>
-          {props.readyToShip}
+        { readyToShip }
       </ReadyDataStyle>
     </ShippingContainerRow>
   );

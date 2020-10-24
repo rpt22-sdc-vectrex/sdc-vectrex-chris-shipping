@@ -21,20 +21,20 @@ mongoose
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
-    }, // per deprecation warnings
+    },
   )
-  .then(() => console.log('DB Connected!'))
+  .then(() => console.log('MongoDb Connected!'))
   .catch((err) => console.log(err));
 
-//  Begin Middleware
+// middleware
 app.use(cors());
 app.use(bodyParser.json());
 
 //  serve static files
-app.use(express.static('client'));
+app.use(express.static(path.join(__dirname, '/client')));
 
 //  use routes
-app.use('/shipping-api/', items);
+app.use('/', items);
 
 app.listen(port, () => {
   console.log(`Shipping server is up and running on port ${port}`);
