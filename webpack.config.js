@@ -4,7 +4,7 @@ module.exports = {
   mode: 'development',
   entry: path.join(__dirname, 'client/src/index.jsx'),
   output: {
-    filename: 'ttreit-shipping.js',
+    filename: 'sdc-vectrex-chris-shipping.js',
     path: path.join(__dirname, '/client/dist'),
   },
   module: {
