@@ -28,12 +28,14 @@ router.get('/all', (req, res) => {
     });
 });
 
-router.get('/:productId', (req, res) => {
-  console.log(`Returning item ${req.params.productId}`);
+router.get('/product/:productId', (req, res) => {
+  const { productId } = req.params;
+  console.log(`Returning item ${productId}`);
   Shipping.findOne({
-    product_id: req.params.productId,
+    product_id: productId,
   })
-    .then((item) => res.json(item));
+    .then((item) => res.json(item))
+    .catch((error) => console.log('*****', error));
 });
 
 // UPDATE
