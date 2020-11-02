@@ -11,7 +11,9 @@ import From from './From.jsx';
 import Policies from './Policies.jsx';
 import ReadyToShip from './ReadyToShip.jsx';
 
-const axios = require('axios').default;
+const axios = require('axios');
+
+const SERVER_URL = 'http://localhost:7100/';
 
 const ShippingContainer = styled.div`
   display: flex;
@@ -27,26 +29,14 @@ class App extends Component {
       returns: '',
       shippingCost: '',
     };
+    this.getShippingCost = this.getShippingCost.bind(this);
+    this.getProduct = this.getProduct.bind(this);
   }
 
   componentDidMount() {
-    this.getProduct();
-  }
-
-  setProductId() {
-    let productId = window.location.pathname;
-    console.log(productId);
-    productId = productId.slice(1);
-    this.id = productId || 1;
-    this.id = parseInt(this.id, 10);
-    return this.id;
-  }
-
-  setProductLocation() {
-    const productLocation = window.location.origin;
-    // console.log(productLocation);
-    this.location = productLocation;
-    return this.location;
+    const parsedUrl = new URL(window.location.href);
+    const productId = parsedUrl.searchParams.get('productId') || 1;
+    this.getProduct(productId);
   }
 
   getShippingCost(data) {
@@ -57,29 +47,27 @@ class App extends Component {
     return cost;
   }
 
-  async getProduct() {
-    const id = this.setProductId();
-    const location = this.setProductLocation();
-    try {
-      const response = await axios.get(`${location}/shipping-api/${id}`);
-      const shipping = response.data;
-      const costToShip = this.getShippingCost(shipping);
-      let delivery = shipping.estimated_delivery;
-      delivery = moment(delivery).format('MMM Do YYYY');
-
-      this.setState({
-        city: shipping.ship_from_city,
-        state: shipping.ship_from_state,
-        estimatedDelivery: delivery,
-        shippingCost: costToShip,
-        deliverTo: shipping.countries_shipped_to,
-        policies: shipping.return_policy,
-        returns: shipping.returns,
-        readyToShip: shipping.ready_to_ship,
-      });
-    } catch (error) {
-      console.error(error);
-    }
+  getProduct(id) {
+    const url = `${SERVER_URL}product/${id}`;
+    console.log(url);
+    axios(url)
+      .then((response) => {
+        const costToShip = this.getShippingCost(response.data);
+        const shipping = response.data;
+        let delivery = shipping.estimated_delivery;
+        delivery = moment(delivery).format('MMM Do YYYY');
+        this.setState({
+          city: shipping.ship_from_city,
+          state: shipping.ship_from_state,
+          estimatedDelivery: delivery,
+          shippingCost: costToShip,
+          deliverTo: shipping.countries_shipped_to,
+          policies: shipping.return_policy,
+          returns: shipping.returns,
+          readyToShip: shipping.ready_to_ship,
+        });
+      })
+      .catch((error) => console.log(error));
   }
 
   render() {
