@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 const express = require('express');
-const Shipping = require('../../models/shipping');
+const Shipping = require('../models/shipping');
 
 const router = express.Router();
 
@@ -29,13 +29,11 @@ router.get('/all', (req, res) => {
 });
 
 router.get('/product/:productId', (req, res) => {
-  const { productId } = req.params;
-  console.log(`Returning item ${productId}`);
+  console.log(`Returning item ${req.params.productId}`);
   Shipping.findOne({
-    product_id: productId,
+    product_id: req.params.productId,
   })
-    .then((item) => res.json(item))
-    .catch((error) => console.log('*****', error));
+    .then((item) => res.json(item));
 });
 
 // UPDATE

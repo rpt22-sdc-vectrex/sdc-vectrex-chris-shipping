@@ -15,5 +15,5 @@ FEC.pem
 mockData3.json
 mockData5.csv
 seed/postgresSchema.js
-couchdbRoutes.js
+routes/couchdbRoutes.js
 couchbaseDB.js
