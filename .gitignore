@@ -17,3 +17,5 @@ mockData5.csv
 seed/postgresSchema.js
 routes/couchdbRoutes.js
 couchbaseDB.js
+newrelic.js
+newrelic_agent.log
