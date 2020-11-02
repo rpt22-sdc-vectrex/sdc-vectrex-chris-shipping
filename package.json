@@ -13,7 +13,7 @@
   "scripts": {
     "seed": "node ./seed/shipping-seeder.js",
     "dev-client": "webpack --config webpack.config.js --watch",
-    "mongo-server": "nodemon server.js",
+    "mongo-server": "nodemon -r newrelic server.js",
     "couchbase-server": "nodemon couchbaseDB.js",
     "build": "webpack --config webpack.config.js",
     "test": "jest"
@@ -42,6 +42,7 @@
     "moment": "^2.29.1",
     "mongoose": "^5.9.28",
     "ndjson": "^2.0.0",
+    "newrelic": "^6.14.0",
     "ottoman": "^2.0.0-alpha.2",
     "pg": "^8.4.1",
     "react": "^16.13.1",
