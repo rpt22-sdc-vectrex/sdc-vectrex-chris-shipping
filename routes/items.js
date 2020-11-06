@@ -13,6 +13,10 @@ router.post('/create', (req, res) => {
       console.log('Record added!');
       res.status(200);
       res.json(data);
+    })
+    .catch((err) => {
+      console.log('Error creating record: ', err);
+      res.sendStatus(400);
     });
 });
 
@@ -21,10 +25,13 @@ router.get('/all', (req, res) => {
   console.log('Returning all items');
   Shipping.find()
     .sort({ product_id: 1 })
-    .then((items) => res.json(items))
+    .then((items) => {
+      res.status(200);
+      res.json(items);
+    })
     .catch((err) => {
       console.log('Record not found: ', err);
-      res.sendStatus(400);
+      res.sendStatus(404);
     });
 });
 
@@ -33,7 +40,14 @@ router.get('/product/:productId', (req, res) => {
   Shipping.findOne({
     product_id: req.params.productId,
   })
-    .then((item) => res.json(item));
+    .then((item) => {
+      res.status(200);
+      res.json(item);
+    })
+    .catch((err) => {
+      console.log('Record not found: ', err);
+      res.sendStatus(404);
+    });
 });
 
 // UPDATE

@@ -10,7 +10,7 @@ const csvBuilder = async (amount) => {
   const start = moment().format('LTS');
   console.log({ start });
   const writer = csvWriter();
-  const fileWrite = fs.createWriteStream('./mockData5.csv');
+  const fileWrite = fs.createWriteStream('./mockData2.csv');
   writer.pipe(fileWrite);
   let mockShipping;
   const accepted = 'Accepted';

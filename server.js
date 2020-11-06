@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 const express = require('express');
 const cors = require('cors');
@@ -5,6 +6,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
+const newrelic = require('newrelic');
 const items = require('./routes/items.js');
 
 const port = process.env.PORT || 7100;
