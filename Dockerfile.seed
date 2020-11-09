@@ -1,0 +1,12 @@
+FROM node:14.13.1
+
+WORKDIR /code
+
+COPY ./db-mongo/index.js /code/db-mongo/index.js
+COPY ./db-mongo/models/shipping.js /code/db-mongo/models/shipping.js
+COPY ./seed/dbSeed.js /code/seed/dbSeed.js
+COPY ./seed/mockData3.json /code/seed/mockData3.json
+
+RUN npm i mongoose ndjson through2 dotenv moment
+
+CMD ["node", "seed/dbSeed.js"]

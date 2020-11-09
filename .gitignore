@@ -19,3 +19,4 @@ routes/couchdbRoutes.js
 couchbaseDB.js
 newrelic.js
 newrelic_agent.log
+db
