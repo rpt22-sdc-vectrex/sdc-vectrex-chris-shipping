@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 const express = require('express');
-const Shipping = require('../models/shipping');
+const Shipping = require('../db-mongo/models/shipping');
 
 const router = express.Router();
 
@@ -36,7 +36,7 @@ router.get('/all', (req, res) => {
 });
 
 router.get('/product/:productId', (req, res) => {
-  console.log(`Returning item ${req.params.productId}`);
+  // console.log(`Returning item ${req.params.productId}`);
   Shipping.findOne({
     product_id: req.params.productId,
   })
@@ -61,7 +61,6 @@ router.put('/:productId/update/', (req, res) => {
     { new: true },
   )
     .then((data) => {
-      console.log('Record updated: ', data);
       res.status(200);
       res.json(data);
     })

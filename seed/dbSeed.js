@@ -10,21 +10,12 @@ const moment = require('moment');
 const through2 = require('through2');
 const ndjson = require('ndjson');
 
-const Shipping = require('../models/shipping.js');
+const Shipping = require('../db-mongo/models/shipping');
 
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const start = moment().format('LTS');
 console.log({ start });
-
-mongoose.connect(process.env.DB_CONNECTION,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    keepAlive: true,
-  })
-  .then(console.log('DB Connection Open'))
-  .catch((err) => console.log('Error conncting to DB: ', err));
 
 const closeConnection = () => {
   mongoose.disconnect();
@@ -32,7 +23,7 @@ const closeConnection = () => {
 };
 // create our readStream
 const readStream = fs.createReadStream(
-  ('./mockData3.json'),
+  ('seed/mockData3.json'),
 );
 // pipe our readStream through ;) our through2 wrapper which is based off node's
 // stream.Transform class and allows us to create a stream much more easily
@@ -130,4 +121,3 @@ databaseStream.on('end', () => {
   const end = moment().format('LTS');
   console.log({ end });
 });
-// objectBuilder(10000000);

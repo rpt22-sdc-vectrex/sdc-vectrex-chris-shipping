@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
+const newrelic = require('newrelic');
+const cluster = require('cluster');
+
+const numCPUs = 6;
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose');
+
 const path = require('path');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-const newrelic = require('newrelic');
 const items = require('./routes/items.js');
 
 const port = process.env.PORT || 7100;
@@ -14,19 +17,6 @@ const port = process.env.PORT || 7100;
 const app = express();
 
 dotenv.config({ path: path.join(__dirname, './.env') });
-
-//  connect to mongo
-mongoose
-  .connect(
-    process.env.DB_CONNECTION,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false,
-    },
-  )
-  .then(() => console.log('MongoDb Connected!'))
-  .catch((err) => console.log(err));
 
 // middleware
 app.use(cors());
@@ -38,6 +28,12 @@ app.use(express.static(path.join(__dirname, '/client')));
 //  use routes
 app.use('/', items);
 
-app.listen(port, () => {
-  console.log(`Shipping server is up and running on port ${port}`);
-});
+if (cluster.isMaster) {
+  for (let i = 0; i < numCPUs; i += 1) {
+    cluster.fork();
+  }
+} else {
+  app.listen(port, () => {
+    console.log(`Shipping server is up and running on port ${port}`);
+  });
+}
