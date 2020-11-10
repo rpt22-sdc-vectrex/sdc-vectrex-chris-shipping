@@ -14,7 +14,7 @@ services:
     container_name: shipping_mongo
     image: mongo
     volumes:
-      - ./db:/data/db
+      - ./data:/data/db
     ports:
       - "27017:27017"
     networks:
