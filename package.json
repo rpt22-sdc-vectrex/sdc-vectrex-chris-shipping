@@ -11,11 +11,12 @@
   "description": "Shipping module for Etsy FEC project",
   "main": "server.js",
   "scripts": {
-    "seed": "node ./seed/shipping-seeder.js",
+    "gen-csv": "node ./seed/csvBuilder.js",
+    "gen-json": "node ./seed/objectBuilder.js",
+    "seed": "node ./seed/dbSeed.js",
     "dev-client": "webpack --config webpack.config.js --watch",
-    "mongo-server": "nodemon -r newrelic server.js",
+    "start": "nodemon server.js",
     "couchbase-server": "nodemon couchbaseDB.js",
-    "build": "webpack --config webpack.config.js",
     "test": "jest"
   },
   "repository": {
@@ -39,8 +40,9 @@
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "g": "^2.0.1",
+    "k6": "0.0.0",
     "moment": "^2.29.1",
-    "mongoose": "^5.9.28",
+    "mongoose": "^5.10.13",
     "ndjson": "^2.0.0",
     "newrelic": "^6.14.0",
     "ottoman": "^2.0.0-alpha.2",

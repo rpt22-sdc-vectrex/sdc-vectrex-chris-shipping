@@ -9,7 +9,7 @@ const objectBuilder = async (amount) => {
   const start = moment().format('LTS');
   console.log({ start });
   const transformStream = JSONStream.stringify(false);
-  const fileWrite = fs.createWriteStream('./mockData5.csv');
+  const fileWrite = fs.createWriteStream('./mockData1.json');
   transformStream.pipe(fileWrite);
   let mockShipping;
   const accepted = 'Accepted';
@@ -36,6 +36,6 @@ const objectBuilder = async (amount) => {
   })();
 };
 
-objectBuilder(10);
+objectBuilder(10000000);
 
 exports.objectBuilder = objectBuilder;
