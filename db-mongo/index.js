@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 
 mongoose
   .connect(
-    'mongodb://shipping_mongo/sdcShipping',
+    'mongodb://54.176.111.22/sdcShipping',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false,
+      useCreateIndex: true,
     },
   )
   .then(() => console.log('MongoDb Connected!'))

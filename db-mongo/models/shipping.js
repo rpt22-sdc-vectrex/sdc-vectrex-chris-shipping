@@ -20,4 +20,6 @@ const ShippingSchema = new Schema({
   return_policy: { type: String, required: true },
 });
 
+ShippingSchema.index({ product_id: 1 });
+
 module.exports = mongoose.model('Shipping', ShippingSchema);

@@ -36,6 +36,6 @@ const objectBuilder = async (amount) => {
   })();
 };
 
-objectBuilder(10000000);
+objectBuilder(10000001);
 
 exports.objectBuilder = objectBuilder;

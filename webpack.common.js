@@ -1,16 +1,22 @@
 const path = require('path');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const SRC_DIR = path.join(__dirname, 'client/src');
+
 module.exports = {
-  mode: 'development',
-  entry: path.join(__dirname, 'client/src/index.jsx'),
-  output: {
-    filename: 'sdc-vectrex-chris-shipping.js',
-    path: path.join(__dirname, '/client/dist'),
-  },
+  entry: `${SRC_DIR}/index.jsx`,
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './client/src/index.html',
+      filename: 'index.html',
+    }),
+  ],
   module: {
     rules: [
       {
         test: /\.jsx$/,
+        include: SRC_DIR,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

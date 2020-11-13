@@ -13,7 +13,7 @@ import ReadyToShip from './ReadyToShip.jsx';
 
 const axios = require('axios');
 
-const SERVER_URL = 'http://localhost:7100/';
+const SERVER_URL = 'http://54.151.125.123:7100/';
 
 const ShippingContainer = styled.div`
   display: flex;

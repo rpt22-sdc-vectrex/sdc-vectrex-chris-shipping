@@ -1,21 +1,22 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-loop-func */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const path = require('path');
 const fs = require('fs');
-const moment = require('moment');
+// const moment = require('moment');
 const through2 = require('through2');
 const ndjson = require('ndjson');
-
 const Shipping = require('../db-mongo/models/shipping');
+const db = require('../db-mongo/index');
 
-dotenv.config({ path: path.join(__dirname, '../.env') });
+// dotenv.config({ path: path.join(__dirname, '../.env') });
 
-const start = moment().format('LTS');
-console.log({ start });
+// const start = moment().format('LTS');
+// console.log({ start });
 
 const closeConnection = () => {
   mongoose.disconnect();
@@ -118,6 +119,6 @@ databaseStream.on('data', () => {
 // and once our water runs out
 databaseStream.on('end', () => {
   closeConnection();
-  const end = moment().format('LTS');
-  console.log({ end });
+  // const end = moment().format('LTS');
+  console.log('Done Seeding!');
 });

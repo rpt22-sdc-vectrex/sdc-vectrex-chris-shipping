@@ -14,7 +14,8 @@
     "gen-csv": "node ./seed/csvBuilder.js",
     "gen-json": "node ./seed/objectBuilder.js",
     "seed": "node ./seed/dbSeed.js",
-    "dev-client": "webpack --config webpack.config.js --watch",
+    "build-dev": "webpack --config webpack.dev.js --watch",
+    "build-prod": "webpack --config webpack.prod.js",
     "start": "nodemon server.js",
     "couchbase-server": "nodemon couchbaseDB.js",
     "test": "jest"
@@ -34,25 +35,22 @@
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "couchbase": "^3.0.6",
     "csv-write-stream": "^2.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "faker": "^5.1.0",
-    "g": "^2.0.1",
+    "html-webpack-plugin": "^4.5.0",
     "k6": "0.0.0",
     "moment": "^2.29.1",
     "mongoose": "^5.10.13",
     "ndjson": "^2.0.0",
     "newrelic": "^6.14.0",
-    "ottoman": "^2.0.0-alpha.2",
-    "pg": "^8.4.1",
+    "node-prune": "^1.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "split": "^1.0.1",
-    "stream-json": "^1.7.1",
     "styled-components": "^5.2.0",
-    "through2": "^4.0.2"
+    "through2": "^4.0.2",
+    "webpack-merge": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -71,7 +69,6 @@
     "jest": "^26.4.0",
     "jest-enzyme": "^7.1.2",
     "nodemon": "^2.0.6",
-    "supertest": "^4.0.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }

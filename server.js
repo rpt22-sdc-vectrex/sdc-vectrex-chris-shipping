@@ -23,7 +23,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //  serve static files
-app.use(express.static(path.join(__dirname, '/client')));
+app.use(express.static(path.join(__dirname, '/client/dist')));
 
 //  use routes
 app.use('/', items);

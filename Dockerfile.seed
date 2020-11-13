@@ -1,4 +1,7 @@
-FROM node:14.13.1
+FROM mhart/alpine-node:latest AS seeder
+
+RUN apk update && apk add curl bash \
+  && apk --no-cache add curl bash
 
 WORKDIR /code
 
@@ -7,6 +10,19 @@ COPY ./db-mongo/models/shipping.js /code/db-mongo/models/shipping.js
 COPY ./seed/dbSeed.js /code/seed/dbSeed.js
 COPY ./seed/mockData3.json /code/seed/mockData3.json
 
-RUN npm i mongoose ndjson through2 dotenv moment
+RUN npm i mongoose --no-optional
 
-CMD ["node", "seed/dbSeed.js"]
+RUN npm prune --production
+
+RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin \
+  && /usr/local/bin/node-prune
+
+FROM mhart/alpine-node:latest
+
+WORKDIR /code
+
+COPY --from=seeder /code .
+
+COPY . /code
+
+CMD "mongoimport --host sdc_shipping_mongo --db sdcShipping --collection shippings --type json --file /code/seed/mockData3.json --jsonArray"
