@@ -9,6 +9,7 @@ seed/mockData5.csv
 seed/objectBuilder.js
 seed/csvBuilder.js
 mockData1e6.json
+seed/mockData3.json
 newrelic_agent.log
 README.md
 CRUD_README.md

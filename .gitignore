@@ -13,6 +13,7 @@ sdc-vectrex-chris-shipping-prod.js
 mockData1e6.json
 mockData5.csv
 seed/postgresSchema.js
+seed/mockData3.json
 routes/couchdbRoutes.js
 couchbaseDB.js
 newrelic.js
