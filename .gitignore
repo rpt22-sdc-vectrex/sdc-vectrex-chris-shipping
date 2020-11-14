@@ -18,5 +18,6 @@ routes/couchdbRoutes.js
 couchbaseDB.js
 newrelic.js
 newrelic_agent.log
+client/dist/loaderio-afaacfa29725b21fc5bd177f0c6b294b.txt
 db
 data

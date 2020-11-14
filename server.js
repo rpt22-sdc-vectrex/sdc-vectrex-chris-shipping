@@ -1,9 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
 const newrelic = require('newrelic');
-const cluster = require('cluster');
 
-const numCPUs = 6;
 const express = require('express');
 const cors = require('cors');
 
@@ -28,12 +26,6 @@ app.use(express.static(path.join(__dirname, '/client/dist')));
 //  use routes
 app.use('/', items);
 
-if (cluster.isMaster) {
-  for (let i = 0; i < numCPUs; i += 1) {
-    cluster.fork();
-  }
-} else {
-  app.listen(port, () => {
-    console.log(`Shipping server is up and running on port ${port}`);
-  });
-}
+app.listen(port, () => {
+  console.log(`Shipping server is up and running on port ${port}`);
+});
