@@ -3,21 +3,21 @@
 
 #Ignore folders
 node_modules
-scrap
-client/dist
+sdc-vectrex-chris-shipping-dev.js
+sdc-vectrex-chris-shipping-prod.js
 
 #Ignore environment variables (API keys)
 .env
 
 #Ignore ssh keys
-FEC.pem
-
-mockData3.json
+mockData1e6.json
 mockData5.csv
 seed/postgresSchema.js
+seed/mockData3.json
 routes/couchdbRoutes.js
 couchbaseDB.js
 newrelic.js
 newrelic_agent.log
+client/dist/loaderio-afaacfa29725b21fc5bd177f0c6b294b.txt
 db
 data

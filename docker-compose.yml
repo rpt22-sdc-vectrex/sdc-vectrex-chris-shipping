@@ -8,25 +8,3 @@ services:
       dockerfile: Dockerfile.build
     ports:
       - "7100:7100"
-    networks:
-      - sdc-shipping-network
-  mongo:
-    container_name: shipping_mongo
-    image: mongo
-    volumes:
-      - ./data:/data/db
-    ports:
-      - "27017:27017"
-    networks:
-    - sdc-shipping-network
-  mongo_seeding:
-    build:
-      context: .
-      dockerfile: Dockerfile.seed
-    depends_on:
-      - mongo
-    networks:
-    - sdc-shipping-network
-networks:
-  sdc-shipping-network:
-    driver: bridge

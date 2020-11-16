@@ -13,7 +13,10 @@ import ReadyToShip from './ReadyToShip.jsx';
 
 const axios = require('axios');
 
-const SERVER_URL = 'http://localhost:7100/';
+const SERVER = process.env.API || '54.151.125.123';
+const PORT = process.env.PORT || 7100;
+
+const SERVER_URL = `http://${SERVER}:${PORT}/`;
 
 const ShippingContainer = styled.div`
   display: flex;
@@ -48,6 +51,7 @@ class App extends Component {
   }
 
   getProduct(id) {
+    console.log(SERVER_URL)
     const url = `${SERVER_URL}product/${id}`;
     console.log(url);
     axios(url)

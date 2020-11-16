@@ -1,10 +1,24 @@
-FROM node:14.13.1
+FROM mhart/alpine-node:latest AS builder
+
+RUN apk --no-cache update \
+  && apk --no-cache add curl bash
 
 WORKDIR /code
 
 COPY package.json /code/package.json
 
-RUN npm install
+RUN npm install --no-optional
+
+RUN npm prune --production
+
+RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin \
+  && /usr/local/bin/node-prune
+
+FROM mhart/alpine-node:latest
+
+WORKDIR /code
+
+COPY --from=builder /code .
 
 COPY . /code
 
