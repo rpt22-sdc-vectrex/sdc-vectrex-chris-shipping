@@ -9,15 +9,15 @@
   },
   "version": "1.0.0",
   "description": "Shipping module for Etsy FEC project",
-  "main": "server.js",
+  "main": "./src/server/server.js",
   "scripts": {
     "gen-csv": "node ./seed/csvBuilder.js",
     "gen-json": "node ./seed/objectBuilder.js",
     "seed": "node ./seed/dbSeed.js",
     "build-dev": "webpack --config webpack.dev.js --watch",
     "build-prod": "webpack --config webpack.prod.js",
-    "start": "nodemon server.js",
-    "pm2": "pm2 start server.js --name shipping-app",
+    "start": "nodemon src/server/server.js",
+    "pm2": "pm2 start server/server.js --name shipping-app",
     "couchbase-server": "nodemon couchbaseDB.js",
     "test": "jest"
   },

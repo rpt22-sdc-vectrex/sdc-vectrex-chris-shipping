@@ -51,7 +51,7 @@ class App extends Component {
   }
 
   getProduct(id) {
-    console.log(SERVER_URL)
+    console.log(SERVER_URL);
     const url = `${SERVER_URL}product/${id}`;
     console.log(url);
     axios(url)

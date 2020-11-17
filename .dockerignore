@@ -4,7 +4,7 @@ npm-debug.log
 sdc-vectrex-chris-shipping-dev.js
 routes/couchdbRoutes.js
 couchbaseDB.js
-client/src
+src/client
 seed/mockData5.csv
 seed/objectBuilder.js
 seed/csvBuilder.js

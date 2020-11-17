@@ -1,6 +1,6 @@
 const path = require('path');
 
-const DIST_DIR = path.join(__dirname, 'client/dist');
+const DIST_DIR = path.join(__dirname, 'public');
 
 const { merge } = require('webpack-merge');
 

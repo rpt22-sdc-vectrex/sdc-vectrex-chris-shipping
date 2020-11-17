@@ -8,11 +8,11 @@ const cors = require('cors');
 const path = require('path');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-const items = require('./routes/items.js');
+const items = require('../../routes/items.js');
 
 const app = express();
 
-dotenv.config({ path: path.join(__dirname, './.env') });
+dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 const PORT = process.env.PORT || 7100;
 
@@ -21,7 +21,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //  serve static files
-app.use(express.static(path.join(__dirname, '/client/dist')));
+app.use(express.static(path.join(__dirname, '../../public')));
 
 //  use routes
 app.use('/', items);
