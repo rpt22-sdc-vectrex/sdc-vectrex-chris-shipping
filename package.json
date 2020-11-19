@@ -51,6 +51,8 @@
     "react-dom": "^16.13.1",
     "styled-components": "^5.2.0",
     "through2": "^4.0.2",
+    "webpack": "^5.5.1",
+    "webpack-cli": "^4.2.0",
     "webpack-merge": "^5.1.1"
   },
   "devDependencies": {
@@ -70,8 +72,6 @@
     "eslint-plugin-react-hooks": "^4.1.0",
     "jest": "^26.4.0",
     "jest-enzyme": "^7.1.2",
-    "nodemon": "^2.0.6",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "nodemon": "^2.0.6"
   }
 }

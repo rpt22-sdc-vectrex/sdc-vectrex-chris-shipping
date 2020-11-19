@@ -8,9 +8,6 @@ const Dotenv = require('dotenv-webpack');
 const SRC_DIR = path.join(__dirname, 'client/src');
 
 module.exports = {
-  node: {
-    fs: 'empty',
-  },
   entry: `${SRC_DIR}/index.jsx`,
   plugins: [
     new HtmlWebpackPlugin({
@@ -33,5 +30,8 @@ module.exports = {
         },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 };
