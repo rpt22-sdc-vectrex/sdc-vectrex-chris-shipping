@@ -13,7 +13,6 @@ module.exports = merge(common, {
   plugins: [
     new webpack.DefinePlugin({
       SERVER_URL: JSON.stringify('localhost'),
-      DB_URL: JSON.stringify('localhost'),
       PORT: JSON.stringify('7100'),
     }),
   ],

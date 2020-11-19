@@ -5,6 +5,9 @@
 node_modules
 sdc-vectrex-chris-shipping-dev.js
 sdc-vectrex-chris-shipping-prod.js
+sdc-vectrex-chris-shipping-dev.js
+sdc-vectrex-chris-shipping-prod.js.LICENSE.txt
+sdc-vectrex-chris-shipping-prod.js.map
 
 #Ignore environment variables (API keys)
 .env
@@ -21,3 +24,4 @@ newrelic_agent.log
 client/dist/loaderio-afaacfa29725b21fc5bd177f0c6b294b.txt
 db
 data
+.dockerignore

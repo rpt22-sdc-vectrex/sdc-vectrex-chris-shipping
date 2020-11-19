@@ -1,9 +1,9 @@
 node_modules
 npm-debug.log
 .env
-sdc-vectrex-chris-shipping-dev.js
-routes/couchdbRoutes.js
-couchbaseDB.js
+client/dist/sdc-vectrex-chris-shipping-dev.js
+client/dist/sdc-vectrex-chris-shipping-prod.js.LICENSE.txt
+client/dist/sdc-vectrex-chris-shipping-prod.js.map
 client/src
 seed/mockData5.csv
 seed/objectBuilder.js
@@ -19,5 +19,4 @@ webpack.prod.js
 k6
 Test
 .babelrc
-couchbaseDB.js
 .eslintrc.js
