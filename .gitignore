@@ -5,6 +5,11 @@
 node_modules
 public/sdc-vectrex-chris-shipping-dev.js
 public/sdc-vectrex-chris-shipping-prod.js
+functions/public/sdc-vectrex-chris-shipping-dev.js
+functions/public/sdc-vectrex-chris-shipping-prod.js
+functions/public/sdc-vectrex-chris-shipping-prod.js.LICENSE.txt
+functions/public/sdc-vectrex-chris-shipping-prod.js.map
+
 
 #Ignore environment variables (API keys)
 .env

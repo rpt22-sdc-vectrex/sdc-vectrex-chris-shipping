@@ -4,19 +4,14 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
-import CostToShip from './CostToShip.jsx';
-import DeliverTo from './DeliverTo.jsx';
-import EstimatedDelivery from './EstimatedDelivery.jsx';
-import From from './From.jsx';
-import Policies from './Policies.jsx';
-import ReadyToShip from './ReadyToShip.jsx';
+import CostToShip from './CostToShip';
+import DeliverTo from './DeliverTo';
+import EstimatedDelivery from './EstimatedDelivery';
+import From from './From';
+import Policies from './Policies';
+import ReadyToShip from './ReadyToShip';
 
 const axios = require('axios');
-
-const SERVER = process.env.API || '54.151.125.123';
-const PORT = process.env.PORT || 7100;
-
-const SERVER_URL = `http://${SERVER}:${PORT}/`;
 
 const ShippingContainer = styled.div`
   display: flex;
@@ -51,8 +46,7 @@ class App extends Component {
   }
 
   getProduct(id) {
-    console.log(SERVER_URL);
-    const url = `${SERVER_URL}product/${id}`;
+    const url = `http://${SERVER_URL}:${PORT}/product/${id}`;
     console.log(url);
     axios(url)
       .then((response) => {

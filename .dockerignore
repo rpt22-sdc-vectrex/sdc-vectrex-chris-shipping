@@ -1,5 +1,7 @@
 node_modules
 npm-debug.log
+functions/public/sdc-vectrex-chris-shipping-prod.js.LICENSE.txt
+functions/public/sdc-vectrex-chris-shipping-prod.js.map
 .env
 sdc-vectrex-chris-shipping-dev.js
 routes/couchdbRoutes.js

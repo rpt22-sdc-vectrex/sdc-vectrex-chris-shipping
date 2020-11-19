@@ -1,29 +1,21 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const Dotenv = require('dotenv-webpack');
 
-const SRC_DIR = path.join(__dirname, 'src/client');
+const SRC_DIR = path.join(__dirname, 'src');
 
 module.exports = {
-  node: {
-    fs: 'empty',
-  },
-  entry: `${SRC_DIR}/index.jsx`,
+  entry: `${SRC_DIR}/client/index.jsx`,
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/client/index.html',
-      filename: 'index.html',
-    }),
     new Dotenv(),
   ],
   module: {
     rules: [
       {
-        test: /\.jsx$/,
-        include: SRC_DIR,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -33,5 +25,8 @@ module.exports = {
         },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 };

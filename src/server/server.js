@@ -1,20 +1,19 @@
+/* eslint-disable react/jsx-filename-extension */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
-const newrelic = require('newrelic');
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import App from '../client/components/App';
 
+const newrelic = require('newrelic');
 const express = require('express');
 const cors = require('cors');
-
 const path = require('path');
-const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
-const items = require('../../routes/items.js');
+const template = require('./template');
+const items = require('./routes/items.js');
 
 const app = express();
-
-dotenv.config({ path: path.join(__dirname, '../../.env') });
-
-const PORT = process.env.PORT || 7100;
 
 // middleware
 app.use(cors());
@@ -25,6 +24,15 @@ app.use(express.static(path.join(__dirname, '../../public')));
 
 //  use routes
 app.use('/', items);
+
+app.get('**', (req, res) => {
+  // IF you have a theme, import it here as theme={theme}
+  const application = renderToString(
+    <App />,
+  );
+  const renderedData = template(application);
+  return res.send(renderedData);
+});
 
 app.listen(PORT, () => {
   console.log(`Shipping server is up and running on port ${PORT}`);
