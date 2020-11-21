@@ -17,8 +17,6 @@
     "build-dev": "webpack --config webpack.dev.js --watch",
     "build-prod": "webpack --config webpack.prod.js",
     "start": "nodemon server.js",
-    "pm2": "pm2 start server.js --name shipping-app",
-    "couchbase-server": "nodemon couchbaseDB.js",
     "test": "jest"
   },
   "repository": {

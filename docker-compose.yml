@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   app:
-    container_name: sdc-vectrex-chris-shipping
+    container_name: sdc-vectrex-chris-shipping_app_2
     restart: always
     build:
       context: .
