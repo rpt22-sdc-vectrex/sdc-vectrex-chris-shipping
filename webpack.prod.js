@@ -13,7 +13,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new webpack.DefinePlugin({
-      SERVER_URL: JSON.stringify('52.9.126.252'),
+      SERVER_URL: JSON.stringify('54.151.125.123'),
       PORT: JSON.stringify('7100'),
     }),
   ],
